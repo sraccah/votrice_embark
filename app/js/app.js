@@ -13,7 +13,7 @@ $(document).ready(function() {
             addToLog("Votrice.methods.vote(value).send({from: web3.eth.defaultAccount})");
 		} else {
             Votrice.vote(parseInt($("input.text").val()));
-            addToLog("Votrice.vote(" + value + ")");
+            addToLog("Votrice.vote(value)");
 		}
     });
     // button get
