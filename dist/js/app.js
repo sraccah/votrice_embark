@@ -62678,42 +62678,35 @@ struct Voter {
     uint vote; // index of the choice
 }
 
-// choices voters have
+// choices stucture
 struct Choice {
-    bytes32 name;
-    uint count;
+    uint count; // number of votes for this project
 }
 
 // chairperson for this ballot
 address public chairperson;
-
 // voters
 mapping(address => Voter) public voters;
 // choices
 Choice[] public choices;
 
 // constructor
-function Votrice(bytes32[] choiceName) {
+function Votrice(uint _numChoices) public {
     chairperson = msg.sender;
-    for (uint i = 0; i < choiceName.length; i++) {
-        choices.push(Choice({
-            name: choiceName[i],
-            count
-        }));
-    }
+    choices.length = _numChoices;
 }
 
 // function to vote for someone
-function vote(uint choice) {
+function vote(uint myChoice) public {
     Voter storage sender = voters[msg.sender];
-    require(!sender.voted);
+    require(!sender.voted && myChoice <= choices.length);
     sender.voted = true;
-    sender.vote = choice;
-    choices[choice].count += 1;
+    sender.vote = myChoice;
+    choices[myChoice].count += 1;
 }
 
 // function to get the most voted choice
-function winningChoice() constant returns (uint winningChoice) {
+function getWinningChoice() public constant returns (uint winningChoice) {
     uint winningCount = 0;
     for (uint j = 0; j < choices.length; j++) {
         if (choices[j].count > winningCount) {
@@ -62722,11 +62715,6 @@ function winningChoice() constant returns (uint winningChoice) {
         }
     }
 }
-
-// function to get the name of the winner
-function winnerName() constant returns (bytes32 winnerName) {
-        winnerName = choices[winningChoice()].name;
-    }
 
 }
 // add logs
