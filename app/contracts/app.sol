@@ -14,8 +14,8 @@ struct Choice {
     uint count; // number of votes for this project
 }
 
-// chairperson for this ballot
-address public chairperson;
+// creator of the contract
+address public creator;
 // voters
 mapping(address => Voter) public voters;
 // choices
@@ -23,7 +23,7 @@ Choice[] public choices;
 
 // constructor
 function Votrice(uint8 _numChoices) public {
-    chairperson = msg.sender;
+    creator = msg.sender;
     choices.length = _numChoices;
 }
 
@@ -46,5 +46,4 @@ function getWinningChoice() public constant returns (uint8 winningChoice) {
         }
     }
 }
-
 }

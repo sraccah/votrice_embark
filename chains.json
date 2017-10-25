@@ -12,6 +12,18 @@
       "0x810431d1ed9a21049eb71689be0fc6c3279a794dd0f3dc57d06a259051085fb5": {
         "name": "Votrice",
         "address": "0xc1368abb4c855ef5df50a634fac007afe300da2e"
+      },
+      "0xab84a2e144427e8b41f2268ff1c70f7d67b3b7d1559e3faece82ab766708f03b": {
+        "name": "Votrice",
+        "address": "0x1560507b7b3e1164a7bc765d7e6fdbcdb1d1eb67"
+      },
+      "0x3d7acc7fcf9c92e39f3c14176cf6c751158832ce3dd6ffc38ffcff43e48e6bbb": {
+        "name": "Votrice",
+        "address": "0x57a9b2f6588475a08b39f12bcd22abcd7214fdcf"
+      },
+      "0x4506ac8ad55008f48e372e59f354ac527c114c582d24867435410ce46af85601": {
+        "name": "Votrice",
+        "address": "0x191adbd31516da859cf3b7245030c6947269c4c7"
       }
     },
     "name": "development"
