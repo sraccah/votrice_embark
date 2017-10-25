@@ -1,7 +1,19 @@
-.winner {
-    margin-bottom: 1%;
+.console {
+    border: 1px solid white;
+    padding-bottom: 1%;
+    height: 200px;
+    overflow: scroll;
+}
+
+h3 {
+    margin: 1%;
+    text-align: center;
 }
 
 .logs {
     color: red;
+}
+
+.winner {
+    margin-bottom: 1%;
 }

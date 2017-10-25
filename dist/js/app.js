@@ -62673,7 +62673,7 @@ EmbarkJS.Messages.setProvider('whisper', {server: 'localhost', port: '8546', typ
 
 // add logs
 var addToLog = function(txt) {
-    $(".logs").append("<br>" + txt);
+    $(".logs").append(txt + "<br>");
   };
 
 $(document).ready(function() {

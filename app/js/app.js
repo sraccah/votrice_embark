@@ -1,6 +1,6 @@
 // add logs
 var addToLog = function(txt) {
-    $(".logs").append("<br>" + txt);
+    $(".logs").append(txt + "<br>");
   };
 
 $(document).ready(function() {
