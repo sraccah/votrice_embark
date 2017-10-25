@@ -62666,3 +62666,4 @@ whenEnvIsLoaded(function() {
   
 EmbarkJS.Messages.setProvider('whisper', {server: 'localhost', port: '8546', type: 'ws'});
 });
+
