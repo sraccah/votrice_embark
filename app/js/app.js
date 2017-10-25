@@ -11,26 +11,26 @@ $(document).ready(function() {
 
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
-		Votrice.methods.vote(value).send({from: web3.eth.defaultAccount});
-		addToLog("VOTE", "Votrice.methods.vote(value).send({from: web3.eth.defaultAccount})");
+            Votrice.methods.vote(value).send({from: web3.eth.defaultAccount});
+            addToLog("vote", "Votrice.methods.vote(value).send({from: web3.eth.defaultAccount})");
 		} else {
-		Votrice.vote(value);
-		addToLog("VOTE", "Votrice.vote(" + value + ")");
+            Votrice.vote(value);
+            addToLog("vote", "Votrice.vote(" + value + ")");
 		}
   	});
 
   	$("button.get").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
-		Votrice.methods.getWinningChoice().call(function(err, value) {
-			$(".value").html(value);
+            Votrice.methods.getWinningChoice().call(function(err, value) {
+                $(".value").html(value);
 		});
-		addToLog("GET", "Votrice.methods.getWinningChoice(console.log)");
+		addToLog("vote", "Votrice.methods.getWinningChoice(console.log)");
 		} else {
-		Votrice.getWinningChoice().then(function(value) {
-			$(".value").html(value.toNumber());
+            Votrice.getWinningChoice().then(function(value) {
+                $(".value").html(value.toNumber());
 		});
-		addToLog("GET", "Votrice.getWinningChoice()");
+		addToLog("vote", "Votrice.getWinningChoice()");
 		}
   	});
 });

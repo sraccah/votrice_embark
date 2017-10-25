@@ -9,10 +9,11 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-D9XILkoivXN+bcvB2kSOowkIvIcBbNdoDQvfBNsxYAIieZbx8/SI4NeUvrRGCpDi" crossorigin="anonymous">
 		<!-- JS PERSO -->
 		<script src="js/app.js"></script>
-		<script src="js/scripts.js"></script>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<!-- JS BOOTSTRAP -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	</head>
+    </head>
 	<body>
 		<!-- CONTAINER HEADER -->
 		<div class="container">
@@ -36,7 +37,7 @@
         </div>
 		<!-- CONTAINER BODY -->
         <div class="container">
-            <div class="col-lg-12">
+            <div class="col-lg-12" id="vote">
                 <h3> 1. Give your vote to a project</h3>
                 <div class="form-group form-inline">
                     <input type="text" class="text form-control" value="1">
@@ -44,8 +45,8 @@
                 </div>
                 <h3> 2. Get the winner project</h3>
                 <div class="form-group">
-                    <div>
-                        current value is <span class="value"></span>
+                    <div class="winner">
+                        the winner is : <span class="value"></span>
                     </div>
                     <button class="get btn btn-primary">Get project</button>
                 </div>
