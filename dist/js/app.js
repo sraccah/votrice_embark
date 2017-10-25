@@ -62643,7 +62643,7 @@ __reduce(["$WEB3","http://localhost:8545"],function(prev, value, next) {
 
 
 __mainContext.__loadManagerInstance.execWhenReady(function() {
-  __mainContext.Votrice = new EmbarkJS.Contract({abi: [{"constant":false,"inputs":[{"name":"myChoice","type":"uint256"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"chairperson","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"voters","outputs":[{"name":"voted","type":"bool"},{"name":"vote","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getWinningChoice","outputs":[{"name":"winningChoice","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"choices","outputs":[{"name":"count","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_numChoices","type":"uint256"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}], address: '0xe6e39acfae619375b53298deb40f519d1a9f5ef0', code: '6060604052341561000f57600080fd5b60405160208061034c8339810160405280805160008054600160a060020a03191633600160a060020a0316179055915081905061004d600282610054565b505061009e565b8154818355818115116100785760008381526020902061007891810190830161007d565b505050565b61009b91905b808211156100975760008155600101610083565b5090565b90565b61029f806100ad6000396000f300606060405263ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630121b93f81146100685780632e4176cf14610080578063a3ec138d146100bc578063bb607b0614610102578063f6fd7fde1461012757600080fd5b341561007357600080fd5b61007e60043561013d565b005b341561008b57600080fd5b6100936101b8565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b34156100c757600080fd5b6100e873ffffffffffffffffffffffffffffffffffffffff600435166101d4565b604051911515825260208201526040908101905180910390f35b341561010d57600080fd5b6101156101f3565b60405190815260200160405180910390f35b341561013257600080fd5b610115600435610254565b73ffffffffffffffffffffffffffffffffffffffff33166000908152600160205260409020805460ff1615801561017657506002548211155b151561018157600080fd5b805460ff19166001908117825581810183905560028054849081106101a257fe5b6000918252602090912001805490910190555050565b60005473ffffffffffffffffffffffffffffffffffffffff1681565b6001602081905260009182526040909120805491015460ff9091169082565b600080805b60025481101561024f578160028281548110151561021257fe5b600091825260209091200154111561024757600280548290811061023257fe5b90600052602060002090016000015491508092505b6001016101f8565b505090565b600280548290811061026257fe5b6000918252602090912001549050815600a165627a7a72305820703a0fba23d8e2573f62d51f139cae9141d6d307897a7e08517780bd75ce59840029', gasEstimates: {"creation":[null,134200],"external":{"chairperson()":389,"choices(uint256)":740,"getWinningChoice()":null,"vote(uint256)":61406,"voters(address)":734},"internal":{}}});
+  __mainContext.Votrice = new EmbarkJS.Contract({abi: [{"constant":true,"inputs":[],"name":"chairperson","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"voters","outputs":[{"name":"voted","type":"bool"},{"name":"vote","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"myChoice","type":"uint8"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getWinningChoice","outputs":[{"name":"winningChoice","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"choices","outputs":[{"name":"count","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[{"name":"_numChoices","type":"uint8"}],"payable":false,"stateMutability":"nonpayable","type":"constructor"}], address: '0x95eefa47f77cc6d6303ee1468e6f776243db80db', code: '6060604052341561000f57600080fd5b6040516020806103848339810160405280805160008054600160a060020a03191633600160a060020a031617905591505060ff811661004f600282610056565b50506100a0565b81548183558181151161007a5760008381526020902061007a91810190830161007f565b505050565b61009d91905b808211156100995760008155600101610085565b5090565b90565b6102d5806100af6000396000f300606060405263ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416632e4176cf8114610068578063a3ec138d146100a4578063b3f98adc146100ed578063bb607b0614610108578063f6fd7fde1461013157600080fd5b341561007357600080fd5b61007b610159565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b34156100af57600080fd5b6100d073ffffffffffffffffffffffffffffffffffffffff60043516610175565b604051911515825260ff1660208201526040908101905180910390f35b34156100f857600080fd5b61010660ff60043516610193565b005b341561011357600080fd5b61011b610220565b60405160ff909116815260200160405180910390f35b341561013c57600080fd5b61014760043561028a565b60405190815260200160405180910390f35b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60016020526000908152604090205460ff8082169161010090041682565b73ffffffffffffffffffffffffffffffffffffffff33166000908152600160205260409020805460ff161580156101cf575060025460ff831611155b15156101da57600080fd5b805460ff8316610100810261ff001960ff1990931660019081179390931617835560028054909190811061020a57fe5b6000918252602090912001805490910190555050565b600080805b60025460ff82161015610285578160028260ff1681548110151561024557fe5b600091825260209091200154111561027d576002805460ff831690811061026857fe5b90600052602060002090016000015491508092505b600101610225565b505090565b600280548290811061029857fe5b6000918252602090912001549050815600a165627a7a72305820007920d1e1edc17a568f448f7ff280346f2598356847b33175a081e473ca5b490029', gasEstimates: {"creation":[null,145000],"external":{"chairperson()":367,"choices(uint256)":740,"getWinningChoice()":null,"vote(uint8)":41497,"voters(address)":514},"internal":{}}});
 
 });
 
@@ -62672,38 +62672,37 @@ EmbarkJS.Messages.setProvider('whisper', {server: 'localhost', port: '8546', typ
 });
 
 // add logs
-var addToLog = function(id, txt) {
-    $(id + " .logs").append("<br>" + txt);
+var addToLog = function(txt) {
+    $(".logs").append("<br>" + txt);
   };
 
 
 $(document).ready(function() {
-
+    // button vote
   	$("button.vote").click(function() {
 		var value = parseInt($("input.text").val(), 1);
-
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.vote(value).send({from: web3.eth.defaultAccount});
-            addToLog("vote", "Votrice.methods.vote(value).send({from: web3.eth.defaultAccount})");
+            addToLog("Votrice.methods.vote(value).send({from: web3.eth.defaultAccount})");
 		} else {
             Votrice.vote(value);
-            addToLog("vote", "Votrice.vote(" + value + ")");
+            addToLog("Votrice.vote(" + value + ")");
 		}
-  	});
-
+      });
+    // button get
   	$("button.get").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.getWinningChoice().call(function(err, value) {
                 $(".value").html(value);
 		});
-		addToLog("vote", "Votrice.methods.getWinningChoice(console.log)");
+        addToLog("Votrice.methods.getWinningChoice(console.log)");
 		} else {
             Votrice.getWinningChoice().then(function(value) {
                 $(".value").html(value.toNumber());
 		});
-		addToLog("vote", "Votrice.getWinningChoice()");
+		addToLog("Votrice.getWinningChoice()");
 		}
   	});
 });

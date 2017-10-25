@@ -4,6 +4,14 @@
       "0x3e17c8162b52d7faef2a1f21b35b1a7e453af025702cee0b88c1ec4a01793fd0": {
         "name": "Votrice",
         "address": "0xe6e39acfae619375b53298deb40f519d1a9f5ef0"
+      },
+      "0x262db83e179078319c5f68f99af405afbba43758b3670ebcca318b7afbed7d0e": {
+        "name": "Votrice",
+        "address": "0x95eefa47f77cc6d6303ee1468e6f776243db80db"
+      },
+      "0x810431d1ed9a21049eb71689be0fc6c3279a794dd0f3dc57d06a259051085fb5": {
+        "name": "Votrice",
+        "address": "0xc1368abb4c855ef5df50a634fac007afe300da2e"
       }
     },
     "name": "development"
