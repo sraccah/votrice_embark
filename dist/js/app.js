@@ -62729,3 +62729,7 @@ function winnerName() constant returns (bytes32 winnerName) {
     }
 
 }
+// add logs
+var addToLog = function(id, txt) {
+    $(id + " .logs").append("<br>" + txt);
+  };
