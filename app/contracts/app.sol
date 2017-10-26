@@ -41,6 +41,7 @@ function vote(uint8 myChoice) public {
     choices[myChoice].count += 1;
 }
 
+// function to check if the sender has voted
 function didVote() public constant returns (bool hasVoted) {
     Voter memory sender = voters[msg.sender];
     if (sender.voted == true) {
