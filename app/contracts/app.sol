@@ -3,14 +3,14 @@ pragma solidity ^0.4.15;
 /// @title Vote for the best DAPP
 contract Votrice {
 
-// voters structure
+// voter structure
 struct Voter {
     bool voted; // has voted ?
     uint8 vote; // index of the choice
 }
 
-// choices stucture
-struct Choice {
+// project stucture
+struct Project {
     uint count; // number of votes for this project
 }
 
@@ -19,19 +19,24 @@ address public creator;
 // voters
 mapping(address => Voter) public voters;
 // choices
-Choice[] public choices;
+Project[] public choices;
 
 // constructor
-function Votrice(uint8 _numChoices) public {
+function Votrice() public {
     creator = msg.sender;
-    choices.length = _numChoices;
+    choices.length = 1;
+}
+
+//function to add contestants
+function setChoices(uint8 nbr) {
+    choices.length = nbr;
 }
 
 // function to vote for someone
 function vote(uint8 myChoice) public {
     Voter storage sender = voters[msg.sender];
     require(!sender.voted && myChoice <= choices.length);
-    sender.voted = true;
+    sender.voted = false;
     sender.vote = myChoice;
     choices[myChoice].count += 1;
 }
