@@ -41,6 +41,15 @@ function vote(uint8 myChoice) public {
     choices[myChoice].count += 1;
 }
 
+function didVote() public constant returns (bool hasVoted) {
+    Voter memory sender = voters[msg.sender];
+    if (sender.voted == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 // function to get the most voted choice
 function getWinningChoice() public constant returns (uint8 winningChoice) {
     uint256 winningCount = 0;
