@@ -31,5 +31,14 @@
       }
     },
     "name": "development"
+  },
+  "0x95ab7819e53e1a852f1039805d852f51ce81fd7f18562a10f5ccfa5ee879680f": {
+    "contracts": {
+      "0xec07d0903b956c0c346725ecda4a9653508eda003d96c8b0e6452cde62de949d": {
+        "name": "Votrice",
+        "address": "0x686833410b65ae250faaea66cb334ac475952da8"
+      }
+    },
+    "name": "development"
   }
 }
