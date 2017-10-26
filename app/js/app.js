@@ -47,7 +47,7 @@ $(document).ready(function() {
         if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.getWinningProject().call(function(err, value) {
                 if (err) {
-                    addToConsole(error);
+                    addToConsole(error + "<br>");
                 }
                 $(".value").html(Number(value));
                 addToConsole("Vainqueur demandé (web3) : " + value + "<br>");
