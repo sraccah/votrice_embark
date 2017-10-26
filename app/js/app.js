@@ -50,13 +50,13 @@ $(document).ready(function() {
                     addToConsole(error);
                 }
                 $(".value").html(Number(value));
+                addToConsole("Vainqueur demandé (web3) : " + value + "<br>");
             });
-            addToConsole("Vainqueur demandé (web3) <br>");
 		} else {
             Votrice.getWinningChoice().then(function(value) {
                 $(".value").html(Number(value));
 		    });
-		    addToConsole("Vainqueur demandé <br>");
+		    addToConsole("Vainqueur demandé : " + value + "<br>");
 		}
   	});
 });
