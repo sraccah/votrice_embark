@@ -28,7 +28,7 @@ function Votrice() public {
 }
 
 //function to add contestants
-function setChoices(uint8 nbr) {
+function setChoices(uint8 nbr) public {
     choices.length = nbr;
 }
 
@@ -36,7 +36,7 @@ function setChoices(uint8 nbr) {
 function vote(uint8 myChoice) public {
     Voter storage sender = voters[msg.sender];
     require(!sender.voted && myChoice <= choices.length);
-    sender.voted = false;
+    sender.voted = true;
     sender.vote = myChoice;
     choices[myChoice].count += 1;
 }
