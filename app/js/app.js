@@ -1,4 +1,4 @@
-// add logs
+// add logs to console
 var addToConsole = function(txt) {
     $(".logs").append(txt);
   };
