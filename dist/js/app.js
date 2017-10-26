@@ -62522,7 +62522,7 @@ __reduce(["$WEB3","http://localhost:8545"],function(prev, value, next) {
 
 
 __mainContext.__loadManagerInstance.execWhenReady(function() {
-  __mainContext.Votrice = new EmbarkJS.Contract({abi: [{"constant":true,"inputs":[],"name":"creator","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"didVote","outputs":[{"name":"hasVoted","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"voters","outputs":[{"name":"voted","type":"bool"},{"name":"vote","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"myChoice","type":"uint8"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"nbr","type":"uint8"}],"name":"setChoices","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getWinningChoice","outputs":[{"name":"winningChoice","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"choices","outputs":[{"name":"count","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}], address: '0xbe1d44386d264ee3d09dbc7d4d4cd49a6865b042', code: '6060604052341561000f57600080fd5b60008054600160a060020a03191633600160a060020a0316179055600161003760028261003d565b50610087565b81548183558181151161006157600083815260209020610061918101908301610066565b505050565b61008491905b80821115610080576000815560010161006c565b5090565b90565b610413806100966000396000f300606060405236156100805763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166302d05d3f81146100855780635ac2701f146100c1578063a3ec138d146100e8578063b3f98adc14610131578063b4fd49d21461014c578063bb607b0614610165578063f6fd7fde1461018e575b600080fd5b341561009057600080fd5b6100986101b6565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b34156100cc57600080fd5b6100d46101d2565b604051901515815260200160405180910390f35b34156100f357600080fd5b61011473ffffffffffffffffffffffffffffffffffffffff60043516610243565b604051911515825260ff1660208201526040908101905180910390f35b341561013c57600080fd5b61014a60ff60043516610261565b005b341561015757600080fd5b61014a60ff600435166102ee565b341561017057600080fd5b610178610301565b60405160ff909116815260200160405180910390f35b341561019957600080fd5b6101a460043561036b565b60405190815260200160405180910390f35b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60006101dc61038a565b73ffffffffffffffffffffffffffffffffffffffff331660009081526001602052604090819020908051908101604052905460ff808216151583526101009091041660208201529050805115156001141561023a576001915061023f565b600091505b5090565b60016020526000908152604090205460ff8082169161010090041682565b73ffffffffffffffffffffffffffffffffffffffff33166000908152600160205260409020805460ff1615801561029d575060025460ff831611155b15156102a857600080fd5b805460ff8316610100810261ff001960ff199093166001908117939093161783556002805490919081106102d857fe5b6000918252602090912001805490910190555050565b60ff81166102fd6002826103a1565b5050565b600080805b60025460ff82161015610366578160028260ff1681548110151561032657fe5b600091825260209091200154111561035e576002805460ff831690811061034957fe5b90600052602060002090016000015491508092505b600101610306565b505090565b600280548290811061037957fe5b600091825260209091200154905081565b604080519081016040526000808252602082015290565b8154818355818115116103c5576000838152602090206103c59181019083016103ca565b505050565b6103e491905b8082111561023f57600081556001016103d0565b905600a165627a7a72305820976a9ab64a10a5394651017d1f06d0aedf0951ecd1655050ca891cbd824f29870029', gasEstimates: {"creation":[null,208600],"external":{"choices(uint256)":802,"creator()":385,"didVote()":709,"getWinningChoice()":null,"setChoices(uint8)":null,"vote(uint8)":41537,"voters(address)":554},"internal":{}}});
+  __mainContext.Votrice = new EmbarkJS.Contract({abi: [{"constant":true,"inputs":[],"name":"creator","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"didVote","outputs":[{"name":"hasVoted","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"voters","outputs":[{"name":"voted","type":"bool"},{"name":"vote","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"myChoice","type":"uint8"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"nbr","type":"uint8"}],"name":"setChoices","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getWinningChoice","outputs":[{"name":"winningChoice","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"choices","outputs":[{"name":"count","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}], address: '0xf6742e7c23bd0557c787613b395ef03a1431c899', code: '6060604052341561000f57600080fd5b60008054600160a060020a03191633600160a060020a0316179055600161003760028261003d565b50610087565b81548183558181151161006157600083815260209020610061918101908301610066565b505050565b61008491905b80821115610080576000815560010161006c565b5090565b90565b610413806100966000396000f300606060405236156100805763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166302d05d3f81146100855780635ac2701f146100c1578063a3ec138d146100e8578063b3f98adc14610131578063b4fd49d21461014c578063bb607b0614610165578063f6fd7fde1461018e575b600080fd5b341561009057600080fd5b6100986101b6565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b34156100cc57600080fd5b6100d46101d2565b604051901515815260200160405180910390f35b34156100f357600080fd5b61011473ffffffffffffffffffffffffffffffffffffffff60043516610243565b604051911515825260ff1660208201526040908101905180910390f35b341561013c57600080fd5b61014a60ff60043516610261565b005b341561015757600080fd5b61014a60ff600435166102ee565b341561017057600080fd5b610178610301565b60405160ff909116815260200160405180910390f35b341561019957600080fd5b6101a460043561036b565b60405190815260200160405180910390f35b60005473ffffffffffffffffffffffffffffffffffffffff1681565b60006101dc61038a565b73ffffffffffffffffffffffffffffffffffffffff331660009081526001602052604090819020908051908101604052905460ff808216151583526101009091041660208201529050805115156001141561023a576001915061023f565b600091505b5090565b60016020526000908152604090205460ff8082169161010090041682565b73ffffffffffffffffffffffffffffffffffffffff33166000908152600160205260409020805460ff1615801561029d575060025460ff831611155b15156102a857600080fd5b805460ff8316610100810261ff001960ff199093166001908117939093161783556002805490919081106102d857fe5b6000918252602090912001805490910190555050565b60ff81166102fd6002826103a1565b5050565b600080805b60025460ff82161015610366578160028260ff1681548110151561032657fe5b600091825260209091200154111561035e576002805460ff831690811061034957fe5b90600052602060002090016000015491508092505b600101610306565b505090565b600280548290811061037957fe5b600091825260209091200154905081565b604080519081016040526000808252602082015290565b8154818355818115116103c5576000838152602090206103c59181019083016103ca565b505050565b6103e491905b8082111561023f57600081556001016103d0565b905600a165627a7a72305820976a9ab64a10a5394651017d1f06d0aedf0951ecd1655050ca891cbd824f29870029', gasEstimates: {"creation":[null,208600],"external":{"choices(uint256)":802,"creator()":385,"didVote()":709,"getWinningChoice()":null,"setChoices(uint8)":null,"vote(uint8)":41537,"voters(address)":554},"internal":{}}});
 
 });
 
@@ -62547,7 +62547,7 @@ var whenEnvIsLoaded = function(cb) {
 }
 
 // add logs
-var addToLog = function(txt) {
+var addToConsole = function(txt) {
     $(".logs").append(txt);
   };
 
@@ -62557,24 +62557,24 @@ $(document).ready(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.setChoices(parseInt($("input.set").val())).send({from: web3.eth.defaultAccount});
-            addToLog("Nombre de projets set (web3) : ");
+            addToConsole("Nombre de projets set (web3) : ");
 		} else {
             Votrice.setChoices(parseInt($("input.set").val()));
-            addToLog("Nombre de projets set : ");
+            addToConsole("Nombre de projets set : ");
 		}
-        addToLog(parseInt($("input.set").val())+"<br>");
+        addToConsole(parseInt($("input.set").val())+"<br>");
     });
     // button vote
   	$("button.vote").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.vote(parseInt($("input.vote").val())).send({from: web3.eth.defaultAccount});
-            addToLog("A voté ! (web3) : ");
+            addToConsole("A voté ! (web3) : ");
 		} else {
             Votrice.vote(parseInt($("input.vote").val()));
-            addToLog("A voté ! : ");
+            addToConsole("A voté ! : ");
 		}
-        addToLog(parseInt($("input.vote").val())+"<br>");
+        addToConsole(parseInt($("input.vote").val())+"<br>");
     });
     // button get
   	$("button.get").click(function() {
@@ -62582,16 +62582,17 @@ $(document).ready(function() {
         if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.getWinningChoice().call(function(err, value) {
                 if (err) {
-                    addToLog(error);
+                    addToConsole(error);
                 }
                 $(".value").html(Number(value));
             });
-            addToLog("Vainqueur demandé (web3) <br>");
+            addToConsole("Vainqueur demandé (web3) <br>");
+            addToConsole(Votrice.methods.didVote().call());
 		} else {
             Votrice.getWinningChoice().then(function(value) {
                 $(".value").html(Number(value));
 		    });
-		    addToLog("Vainqueur demandé <br>");
+		    addToConsole("Vainqueur demandé <br>");
 		}
   	});
 });

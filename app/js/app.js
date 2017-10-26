@@ -1,5 +1,5 @@
 // add logs
-var addToLog = function(txt) {
+var addToConsole = function(txt) {
     $(".logs").append(txt);
   };
 
@@ -9,24 +9,24 @@ $(document).ready(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.setChoices(parseInt($("input.set").val())).send({from: web3.eth.defaultAccount});
-            addToLog("Nombre de projets set (web3) : ");
+            addToConsole("Nombre de projets set (web3) : ");
 		} else {
             Votrice.setChoices(parseInt($("input.set").val()));
-            addToLog("Nombre de projets set : ");
+            addToConsole("Nombre de projets set : ");
 		}
-        addToLog(parseInt($("input.set").val())+"<br>");
+        addToConsole(parseInt($("input.set").val())+"<br>");
     });
     // button vote
   	$("button.vote").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.vote(parseInt($("input.vote").val())).send({from: web3.eth.defaultAccount});
-            addToLog("A voté ! (web3) : ");
+            addToConsole("A voté ! (web3) : ");
 		} else {
             Votrice.vote(parseInt($("input.vote").val()));
-            addToLog("A voté ! : ");
+            addToConsole("A voté ! : ");
 		}
-        addToLog(parseInt($("input.vote").val())+"<br>");
+        addToConsole(parseInt($("input.vote").val())+"<br>");
     });
     // button get
   	$("button.get").click(function() {
@@ -34,16 +34,17 @@ $(document).ready(function() {
         if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.getWinningChoice().call(function(err, value) {
                 if (err) {
-                    addToLog(error);
+                    addToConsole(error);
                 }
                 $(".value").html(Number(value));
             });
-            addToLog("Vainqueur demandé (web3) <br>");
+            addToConsole("Vainqueur demandé (web3) <br>");
+            addToConsole(Votrice.methods.didVote().call());
 		} else {
             Votrice.getWinningChoice().then(function(value) {
                 $(".value").html(Number(value));
 		    });
-		    addToLog("Vainqueur demandé <br>");
+		    addToConsole("Vainqueur demandé <br>");
 		}
   	});
 });
