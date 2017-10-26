@@ -45,7 +45,7 @@ $(document).ready(function() {
   	$("button.get").click(function() {
         // If web3.js 1.0 is being used
         if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.getWinningChoice().call(function(err, value) {
+            Votrice.methods.getWinningProject().call(function(err, value) {
                 if (err) {
                     addToConsole(error);
                 }
@@ -53,7 +53,7 @@ $(document).ready(function() {
                 addToConsole("Vainqueur demandé (web3) : " + value + "<br>");
             });
 		} else {
-            Votrice.getWinningChoice().then(function(value) {
+            Votrice.getWinningProject().then(function(value) {
                 $(".value").html(Number(value));
 		    });
 		    addToConsole("Vainqueur demandé : " + value + "<br>");
