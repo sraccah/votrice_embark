@@ -20,7 +20,10 @@ $(document).ready(function() {
   	$("button.vote").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.didVote().call(function(err, value){
+            Votrice.methods.didVote().call(function(err, value) {
+                if (err) {
+                    addToConsole(error + "<br>");
+                }
                 if (value == false) {
                     addToConsole("A voté ! (web3) : ");
                 } else {
@@ -30,7 +33,10 @@ $(document).ready(function() {
             });
             Votrice.methods.vote(parseInt($("input.vote").val())).send({from: web3.eth.defaultAccount});
 		} else {
-            Votrice.methods.didVote().call(function(err, value){
+            Votrice.methods.didVote().call(function(err, value) {
+                if (err) {
+                    addToConsole(error + "<br>");
+                }
                 if (value == false) {
                     addToConsole("A voté ! : ");
                 } else {
