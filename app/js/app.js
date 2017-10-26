@@ -20,13 +20,26 @@ $(document).ready(function() {
   	$("button.vote").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
+            Votrice.methods.didVote().call(function(err, value){
+                if (value == false) {
+                    addToConsole("A voté ! (web3) : ");
+                } else {
+                    addToConsole("A déjà voté ! (web3) : VOTE ANNULÉ : ");
+                }
+                addToConsole(parseInt($("input.vote").val())+"<br>");
+            });
             Votrice.methods.vote(parseInt($("input.vote").val())).send({from: web3.eth.defaultAccount});
-            addToConsole("A voté ! (web3) : ");
 		} else {
+            Votrice.methods.didVote().call(function(err, value){
+                if (value == false) {
+                    addToConsole("A voté ! : ");
+                } else {
+                    addToConsole("A déjà voté ! : VOTE ANNULÉ : ");
+                }
+                addToConsole(parseInt($("input.vote").val())+"<br>");
+            });
             Votrice.vote(parseInt($("input.vote").val()));
-            addToConsole("A voté ! : ");
 		}
-        addToConsole(parseInt($("input.vote").val())+"<br>");
     });
     // button get
   	$("button.get").click(function() {
@@ -39,7 +52,6 @@ $(document).ready(function() {
                 $(".value").html(Number(value));
             });
             addToConsole("Vainqueur demandé (web3) <br>");
-            addToConsole(Votrice.methods.didVote().call());
 		} else {
             Votrice.getWinningChoice().then(function(value) {
                 $(".value").html(Number(value));
