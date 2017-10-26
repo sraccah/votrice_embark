@@ -28,8 +28,8 @@ function Votrice() public {
 }
 
 //function to add contestants
-function setChoices(uint8 nbr) public {
-    choices.length = nbr;
+function setChoices(uint8 len) public {
+    choices.length = len;
 }
 
 // function to vote for someone
@@ -52,12 +52,12 @@ function didVote() public constant returns (bool hasVoted) {
 }
 
 // function to get the most voted choice
-function getWinningChoice() public constant returns (uint8 winningChoice) {
+function getWinningProject() public constant returns (uint8 winningProject) {
     uint256 winningCount = 0;
     for (uint8 j = 0; j < choices.length; j++) {
         if (choices[j].count > winningCount) {
             winningCount = choices[j].count;
-            winningChoice = j;
+            winningProject = j;
         }
     }
 }

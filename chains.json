@@ -1,15 +1,1 @@
-{
-  "0x1260ce48f1c4b3258c263868f5494dd02ab9bf8d21617a208d720f855d618c9f": {
-    "contracts": {
-      "0x3c6af6fdfaffe89f895db8723ff67ff8319173f2e1975b500d1627bd96a5b369": {
-        "name": "Votrice",
-        "address": "0x045035b6ef5c407ae6b00a29c24cf0450d4fbdbd"
-      },
-      "0xb92efb91a8689d8babafdfb0eec9687d7e06dab97a1b0c33167ec8722cc40f92": {
-        "name": "Votrice",
-        "address": "0x6aed5418a20f2cb5f1bdbb3dd46388ae45424225"
-      }
-    },
-    "name": "development"
-  }
-}
+{}
