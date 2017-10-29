@@ -1,7 +1,7 @@
 // add logs to console
 var addToConsole = function(txt) {
     $(".logs").append(txt);
-  };
+};
 
 $(document).ready(function() {
     // button set
@@ -15,6 +15,19 @@ $(document).ready(function() {
             addToConsole("Nombre de projets set : ");
 		}
         addToConsole(parseInt($("input.set").val())+"<br>");
+        for (var i = 0; i < parseInt($("input.set").val()); i++) {
+            $(".voters").append("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Voteur "+(i + 1)+"</span></input>");
+        }
+    });
+    // button voter
+  	$("button.voter").click(function() {
+		// If web3.js 1.0 is being used
+		if (EmbarkJS.isNewWeb3()) {
+            addToConsole("Votant (web3) : ");
+		} else {
+            addToConsole("Votant : ");
+		}
+        addToConsole(parseInt($("input[name=voter]:checked").val()) + 1 +"<br>");
     });
     // button vote
   	$("button.vote").click(function() {
@@ -64,5 +77,6 @@ $(document).ready(function() {
 		    });
 		    addToConsole("Vainqueur demandé : " + value + "<br>");
 		}
-  	});
+    });
 });
+

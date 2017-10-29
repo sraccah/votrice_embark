@@ -1,3 +1,7 @@
+h1 {
+    font-family: 'Pacifico', cursive;
+}
+
 .panel {
     border: 1px solid white;
     padding-bottom: 1%;
@@ -13,6 +17,12 @@ h3 {
 
 .logs {
     color: red;
+}
+
+#voter {
+    margin-right: 1%;
+    margin-left: 1%;
+    color: white;
 }
 
 .winner {

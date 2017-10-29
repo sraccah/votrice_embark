@@ -40,5 +40,68 @@
       }
     },
     "name": "development"
+  },
+  "0xc73f9460f82de330e80e2b3b17a501543d556be3787b427748b97c31ce45c460": {
+    "contracts": {
+      "0xec07d0903b956c0c346725ecda4a9653508eda003d96c8b0e6452cde62de949d": {
+        "name": "Votrice",
+        "address": "0xce1ca9f24f55ab51a08413951cd09ef2c7d8e882"
+      }
+    },
+    "name": "development"
+  },
+  "0xb78b6d5b079b788b5c0498c2c292e42da14e491e04e9d73918e472440316d26f": {
+    "contracts": {
+      "0xec07d0903b956c0c346725ecda4a9653508eda003d96c8b0e6452cde62de949d": {
+        "name": "Votrice",
+        "address": "0x6db6b8c07da53fd311e3567a0b533a44f9cc105e"
+      }
+    },
+    "name": "development"
+  },
+  "0x5770b355cd267c35d4ef14222943f5b27158cb5bf438a52444884244aeb5080c": {
+    "contracts": {
+      "0xec07d0903b956c0c346725ecda4a9653508eda003d96c8b0e6452cde62de949d": {
+        "name": "Votrice",
+        "address": "0x0f6d1ec203166ce9a3bef69f04e578eae9543128"
+      },
+      "0x59d8f306bbb6b64bb7f622e161a1753cfaf67a8654d1649bf0edf8fef8d34f13": {
+        "name": "Votrice",
+        "address": "0xa6c4f57277706ebb487b8d8ed1ed2ccf14f5831b"
+      },
+      "0x3a3f1b2ba2576953ee0595324d25df5078e74da91214288505dd328b28da3295": {
+        "name": "Votrice",
+        "address": "0xe73f5dea13a98563a1bf1c459f41d71a906a2f7c"
+      },
+      "0x9b8c445b74b5057919078e5d0e86b976e1750ec6f1d3f630accd1d65a22f4193": {
+        "name": "Votrice",
+        "address": "0xa931cd497aec2e5148b020eee2aaa2fa17b562e8"
+      },
+      "0x70556197a997ce0ab722178c6a4386c083eb8d712816a7492950bea71e47e37d": {
+        "name": "Votrice",
+        "address": "0xb7ec30898416d606c8037432e9dc4542052d1b5f"
+      },
+      "0xa47c2e5bd88e7c6d9676e9e0396f73e80b6282c2568abc1526b3d6069e895d45": {
+        "name": "Votrice",
+        "address": "0x312e427dc6565c7bd4ab6fc2bc3202658cd92675"
+      },
+      "0x5796284f9f30ff0b659f5ecdbccc091da1ae9917bfc3ebbcbd6444c7148427ec": {
+        "name": "Votrice",
+        "address": "0x04c7bfcfc20f887f6f137305fdb39b91366807b2"
+      },
+      "0x776943eb92982f5bd96119239c434e026123eac5dd995bf4b5915091e9f5c2b1": {
+        "name": "Votrice",
+        "address": "0x1271d100ebe149ed614f971288a6528ea2d1d8d5"
+      },
+      "0x5e3a89c81c38ed040f71d9e75fcc8c8657c26e2a2004635fe2b653acf96ecace": {
+        "name": "Votrice",
+        "address": "0x5c0ecb34bc79eae5d73fb8db9f638689a56aca63"
+      },
+      "0x5e54e9c79f1320f443e1b89f74715235bb0c78f8df7e2f21bc99a0a131f52cad": {
+        "name": "Votrice",
+        "address": "0xbddeac743b48bab9b37863de6a801f3b07fc6bf1"
+      }
+    },
+    "name": "development"
   }
 }
