@@ -3,7 +3,9 @@ var addToConsole = function(txt) {
     $(".logs").append(txt);
 };
 
+
 $(document).ready(function() {
+    var status = 0;
     // button set
   	$("button.set").click(function() {
 		// If web3.js 1.0 is being used
@@ -16,8 +18,15 @@ $(document).ready(function() {
 		}
         addToConsole(parseInt($("input.set").val())+"<br>");
         for (var i = 0; i < parseInt($("input.set").val()); i++) {
-            $(".voters").append("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Voteur "+(i + 1)+"</span></input>");
+            if (status == 0) {
+                $(".voters").append("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Votant "+(i + 1)+"</span></input>");
+            } else {
+                $(".voters").html("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Votant "+(i + 1)+"</span></input>");
+                status = 0;
+            }
         }
+        status = 1;
+        $(".voter").show();
     });
     // button voter
   	$("button.voter").click(function() {
@@ -26,8 +35,12 @@ $(document).ready(function() {
             addToConsole("Votant (web3) : ");
 		} else {
             addToConsole("Votant : ");
-		}
-        addToConsole(parseInt($("input[name=voter]:checked").val()) + 1 +"<br>");
+        }
+        if ($("input[name=voter]:checked").prop('checked')) {
+            addToConsole(parseInt($("input[name=voter]:checked").val()) + 1 +"<br>");
+        } else {
+            addToConsole("default address : voters[0] <br>");
+        }
     });
     // button vote
   	$("button.vote").click(function() {

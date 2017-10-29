@@ -103,5 +103,23 @@
       }
     },
     "name": "development"
+  },
+  "0x4c01bf746091e7b12bfdaafe8d420cb9ac0eb9980e4afcb9cd13934279ac7c67": {
+    "contracts": {
+      "0x08287f3f43ac2ff8f232e541a2b93e95114096cd64ad9d864a2fc59febeaa467": {
+        "name": "Votrice",
+        "address": "0x31068b5d4612c915d573de62c4df6cf749be0e86"
+      }
+    },
+    "name": "development"
+  },
+  "0xfe9240731469d9d3a530844592d43bd86c8db61da4da2fd99a16cc5fa31a402d": {
+    "contracts": {
+      "0x08287f3f43ac2ff8f232e541a2b93e95114096cd64ad9d864a2fc59febeaa467": {
+        "name": "Votrice",
+        "address": "0x75011d60f9df65e451985c58b34d07fbe60714c0"
+      }
+    },
+    "name": "development"
   }
 }

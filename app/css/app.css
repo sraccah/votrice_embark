@@ -25,6 +25,10 @@ h3 {
     color: white;
 }
 
+.voter {
+    display: none;
+}
+
 .winner {
     margin-bottom: 1%;
 }
