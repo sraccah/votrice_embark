@@ -33,14 +33,8 @@ function setChoices(uint8 len) public {
 }
 
 //function to set the voter
-function setVoter() public {
-    Voter memory sender = voters[msg.sender];
-    sender.voted = false;
-    for (uint8 i = 0; i < choices.length; i++) {
-        voters[i].vote = 0;
-    }
-    sender.voted = true;
-    choices[0].count = choices.length;
+function setAccounts() public {
+    choices[0].count = 11;
 }
 
 // function to vote for someone

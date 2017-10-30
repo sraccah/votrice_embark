@@ -62522,7 +62522,7 @@ __reduce(["$WEB3","http://localhost:8545"],function(prev, value, next) {
 
 
 __mainContext.__loadManagerInstance.execWhenReady(function() {
-  __mainContext.Votrice = new EmbarkJS.Contract({abi: [{"constant":true,"inputs":[],"name":"creator","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"caller","type":"address"}],"name":"didVote","outputs":[{"name":"hasVoted","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"voters","outputs":[{"name":"voted","type":"bool"},{"name":"vote","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"myChoice","type":"uint8"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"len","type":"uint8"}],"name":"setChoices","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getWinningProject","outputs":[{"name":"winningProject","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"setVoter","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"choices","outputs":[{"name":"count","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}], address: '0xbd178e486146bd3790611a1912ac4a50283ea989', code: '6060604052341561000f57600080fd5b60008054600160a060020a03191633600160a060020a0316179055600161003760028261003d565b50610087565b81548183558181151161006157600083815260209020610061918101908301610066565b505050565b61008491905b80821115610080576000815560010161006c565b5090565b90565b6104aa806100966000396000f3006060604052361561008b5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166302d05d3f8114610090578063354d91de146100bf578063a3ec138d146100f2578063b3f98adc1461012e578063b4fd49d214610149578063b8a4129914610162578063e727331a1461018b578063f6fd7fde1461019e575b600080fd5b341561009b57600080fd5b6100a36101c6565b604051600160a060020a03909116815260200160405180910390f35b34156100ca57600080fd5b6100de600160a060020a03600435166101d5565b604051901515815260200160405180910390f35b34156100fd57600080fd5b610111600160a060020a036004351661023b565b604051911515825260ff1660208201526040908101905180910390f35b341561013957600080fd5b61014760ff60043516610259565b005b341561015457600080fd5b61014760ff600435166102e8565b341561016d57600080fd5b6101756102fb565b60405160ff909116815260200160405180910390f35b341561019657600080fd5b610147610365565b34156101a957600080fd5b6101b46004356103fe565b60405190815260200160405180910390f35b600054600160a060020a031681565b60006101df61041d565b600160a060020a03831660009081526001602052604090819020908051908101604052905460ff80821615158352610100909104166020820152905080511515600114156102305760019150610235565b600091505b50919050565b60016020526000908152604090205460ff8082169161010090041682565b600160a060020a0333166000908152600160205260409020805460ff16158015610288575060025460ff831611155b8015610297575060008260ff16115b15156102a257600080fd5b805460ff8316610100810261ff001960ff199093166001908117939093161783556002805490919081106102d257fe5b6000918252602090912001805490910190555050565b60ff81166102f7600282610434565b5050565b600080805b60025460ff82161015610360578160028260ff1681548110151561032057fe5b6000918252602090912001541115610358576002805460ff831690811061034357fe5b90600052602060002090016000015491508092505b600101610300565b505090565b61036d61041d565b600160a060020a0333166000908152600160205260408082209080519081016040529054610100900460ff166020820152600080825290925090505b60025460ff821610156103da5760ff81166000908152600160208190526040909120805461ff0019169055016103a9565b60018252600280549060008281106103ee57fe5b6000918252602090912001555050565b600280548290811061040c57fe5b600091825260209091200154905081565b604080519081016040526000808252602082015290565b8154818355818115116104585760008381526020902061045891810190830161045d565b505050565b61047b91905b808211156104775760008155600101610463565b5090565b905600a165627a7a7230582095d9577b150da6127e5cf67bf9beaf4be5d5bf762c55b12edde496f6de1821b90029', gasEstimates: {"creation":[null,238800],"external":{"choices(uint256)":824,"creator()":523,"didVote(address)":865,"getWinningProject()":null,"setChoices(uint8)":null,"setVoter()":null,"vote(uint8)":41643,"voters(address)":623},"internal":{}}});
+  __mainContext.Votrice = new EmbarkJS.Contract({abi: [{"constant":true,"inputs":[],"name":"creator","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"caller","type":"address"}],"name":"didVote","outputs":[{"name":"hasVoted","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"voters","outputs":[{"name":"voted","type":"bool"},{"name":"vote","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"setAccounts","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"myChoice","type":"uint8"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"len","type":"uint8"}],"name":"setChoices","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getWinningProject","outputs":[{"name":"winningProject","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"choices","outputs":[{"name":"count","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}], address: '0x78f33ead9f22e500ad8f45bf4e796e92cdce5606', code: '6060604052341561000f57600080fd5b60008054600160a060020a03191633600160a060020a0316179055600161003760028261003d565b50610087565b81548183558181151161006157600083815260209020610061918101908301610066565b505050565b61008491905b80821115610080576000815560010161006c565b5090565b90565b610431806100966000396000f3006060604052361561008b5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166302d05d3f8114610090578063354d91de146100bf578063a3ec138d146100f2578063b3bb34a71461012e578063b3f98adc14610143578063b4fd49d21461015c578063b8a4129914610175578063f6fd7fde1461019e575b600080fd5b341561009b57600080fd5b6100a36101c6565b604051600160a060020a03909116815260200160405180910390f35b34156100ca57600080fd5b6100de600160a060020a03600435166101d5565b604051901515815260200160405180910390f35b34156100fd57600080fd5b610111600160a060020a036004351661023b565b604051911515825260ff1660208201526040908101905180910390f35b341561013957600080fd5b610141610259565b005b341561014e57600080fd5b61014160ff60043516610279565b341561016757600080fd5b61014160ff60043516610308565b341561018057600080fd5b61018861031b565b60405160ff909116815260200160405180910390f35b34156101a957600080fd5b6101b4600435610385565b60405190815260200160405180910390f35b600054600160a060020a031681565b60006101df6103a4565b600160a060020a03831660009081526001602052604090819020908051908101604052905460ff80821615158352610100909104166020820152905080511515600114156102305760019150610235565b600091505b50919050565b60016020526000908152604090205460ff8082169161010090041682565b600b6002600081548110151561026b57fe5b600091825260209091200155565b600160a060020a0333166000908152600160205260409020805460ff161580156102a8575060025460ff831611155b80156102b7575060008260ff16115b15156102c257600080fd5b805460ff8316610100810261ff001960ff199093166001908117939093161783556002805490919081106102f257fe5b6000918252602090912001805490910190555050565b60ff81166103176002826103bb565b5050565b600080805b60025460ff82161015610380578160028260ff1681548110151561034057fe5b6000918252602090912001541115610378576002805460ff831690811061036357fe5b90600052602060002090016000015491508092505b600101610320565b505090565b600280548290811061039357fe5b600091825260209091200154905081565b604080519081016040526000808252602082015290565b8154818355818115116103df576000838152602090206103df9181019083016103e4565b505050565b61040291905b808211156103fe57600081556001016103ea565b5090565b905600a165627a7a7230582050ed0e8d0edafd08e32ad44744833894bf1347c5fc82970d6f7b00da778fab360029', gasEstimates: {"creation":[null,214600],"external":{"choices(uint256)":824,"creator()":523,"didVote(address)":865,"getWinningProject()":null,"setAccounts()":20486,"setChoices(uint8)":null,"vote(uint8)":41665,"voters(address)":623},"internal":{}}});
 
 });
 
@@ -62563,13 +62563,22 @@ $(document).ready(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.setChoices(parseInt($("input.set").val())).send({from: web3.eth.defaultAccount});
+            Votrice.methods.setAccounts().send({from: web3.eth.defaultAccount});
             addToConsole("Nombre de projets set (web3) : ");
 		} else {
             Votrice.setChoices(parseInt($("input.set").val()));
             addToConsole("Nombre de projets set : ");
-		}
-        addToConsole(parseInt($("input.set").val())+"<br>");
-        for (var i = 0; i < parseInt($("input.set").val()); i++) {
+        }
+        var ret = parseInt($("input.set").val());
+        var tmp = 1;
+        if (ret > 10 || ret < 1) {
+            tmp = 1;
+            addToConsole("1" + "<br>");
+        } else {
+            tmp = ret;
+            addToConsole(ret + "<br>");
+        }
+        for (var i = 0; i < tmp; i++) {
             if (status == 0) {
                 $(".voters").append("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Votant "+(i + 1)+"</span></input>");
             } else {
@@ -62612,7 +62621,12 @@ $(document).ready(function() {
                 }
                 addToConsole(parseInt($("input.vote").val())+"<br>");
             });
-            Votrice.methods.vote(parseInt($("input.vote").val())).send({from: accounts[voter]});
+            var vote = parseInt($("input.vote").val());
+            if (vote > 10 || vote < 1) {
+                Votrice.methods.vote(1).send({from: accounts[voter]});
+            } else {
+                Votrice.methods.vote(vote).send({from: accounts[voter]});
+            }
 		} else {
             Votrice.methods.didVote(accounts[voter]).call((err, value) => {
                 if (value == false) {
@@ -62620,9 +62634,15 @@ $(document).ready(function() {
                 } else {
                     addToConsole("A déjà voté ! : VOTE ANNULÉ : ");
                 }
-                addToConsole(parseInt($("input.vote").val())+"<br>");
             });
-            Votrice.vote(parseInt($("input.vote").val()));
+            var vote = parseInt($("input.vote").val());
+            if (vote > 10 || vote < 1) {
+                Votrice.vote(1);
+                addToConsole("1<br>");
+            } else {
+                Votrice.vote(vote);
+                addToConsole(parseInt($("input.vote").val())+"<br>");
+            }
 		}
     });
     // button get
@@ -62630,14 +62650,16 @@ $(document).ready(function() {
         // If web3.js 1.0 is being used
         if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.getWinningProject().call((err, value) => {
-                $(".value").html(Number(value));
-                addToConsole("Vainqueur demandé (web3) : " + value + "<br>");
+                var nbr = Number(value) + 1;
+                $(".value").html(nbr);
+                addToConsole("Vainqueur demandé (web3) : " + nbr + "<br>");
             });
 		} else {
             Votrice.getWinningProject().then((value) => {
-                $(".value").html(Number(value));
+                var nbr = Number(value) + 1;
+                $(".value").html(nbr);
+                addToConsole("Vainqueur demandé : " + nbr + "<br>");
 		    });
-		    addToConsole("Vainqueur demandé : " + value + "<br>");
 		}
     });
 });
