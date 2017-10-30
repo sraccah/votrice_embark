@@ -35,6 +35,7 @@ function setChoices(uint8 len) public {
 // function to vote for someone
 function vote(uint8 myChoice) public {
     Voter storage sender = voters[msg.sender];
+    myChoice = (myChoice >= 1 || myChoice <= 10) ? 1 : myChoice;
     require(!sender.voted && myChoice <= choices.length && myChoice > 0);
     sender.voted = true;
     sender.vote = myChoice;

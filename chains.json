@@ -1,1 +1,11 @@
-{}
+{
+  "0x9f17c0c31d6f0fcf47b1c514604726e4b4b20618518a4ff6030dad934e60ed4d": {
+    "contracts": {
+      "0xf8c4476991c38e131cc817e2d0d9c514c5a8e689697ec78ddb5a56249a00c002": {
+        "name": "Votrice",
+        "address": "0xf679ccf34d7d4f8bc6530d9084077d7c4326acae"
+      }
+    },
+    "name": "development"
+  }
+}
