@@ -15,7 +15,6 @@ $(document).ready(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.setChoices(parseInt($("input.set").val())).send({from: web3.eth.defaultAccount});
-            Votrice.methods.setAccounts().send({from: web3.eth.defaultAccount});
             addToConsole("Nombre de projets set (web3) : ");
 		} else {
             Votrice.setChoices(parseInt($("input.set").val()));
