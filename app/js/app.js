@@ -3,7 +3,6 @@ var addToConsole = function(txt) {
     $(".logs").append(txt);
 };
 
-
 $(document).ready(function() {
     var status = 0;
     // button set
@@ -27,6 +26,11 @@ $(document).ready(function() {
         }
         status = 1;
         $(".voter").show();
+        var defaultAccount = web3.eth.defaultAccount;
+        var accounts = web3.eth.getAccounts(console.log);
+        console.log(defaultAccount);
+        console.log(Object(accounts));
+        addToConsole(" default : " + defaultAccount + "<br> accounts : " + accounts + "<br>");
     });
     // button voter
   	$("button.voter").click(function() {
