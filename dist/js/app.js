@@ -62554,6 +62554,7 @@ var addToConsole = function(txt) {
 var god = web3.eth.defaultAccount;
 
 $(document).ready(function() {
+    // Array to simulate different voters
     var voters = [
         "0xb7e2050f3c9e30829363f5c926fbd0050f2b20a7",
         "0x1dc47f98416eaab7fee81648b829fa205fcf0b4c",
@@ -62566,7 +62567,9 @@ $(document).ready(function() {
         "0x44deae4a3a964578899285ccc11218585a5c5d8e",
         "0x9d7657c6a32732ed3a83665c3130f6446cc10cac"
     ];
+    // index of the address
     var voter = 0;
+    // status of the setChoices methode
     var status = 0;
     // button set
   	$("button.set").click(function() {
