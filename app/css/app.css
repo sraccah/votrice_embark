@@ -32,3 +32,15 @@ h3 {
 .winner {
     margin-bottom: 1%;
 }
+.action {
+    margin-bottom: 80px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    font-family: monospace;
+    text-align: right;
+    height: 20px;
+    display: none;
+}
