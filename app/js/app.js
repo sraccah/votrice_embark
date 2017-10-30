@@ -15,13 +15,22 @@ $(document).ready(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.setChoices(parseInt($("input.set").val())).send({from: web3.eth.defaultAccount});
+            Votrice.methods.setAccounts().send({from: web3.eth.defaultAccount});
             addToConsole("Nombre de projets set (web3) : ");
 		} else {
             Votrice.setChoices(parseInt($("input.set").val()));
             addToConsole("Nombre de projets set : ");
-		}
-        addToConsole(parseInt($("input.set").val())+"<br>");
-        for (var i = 0; i < parseInt($("input.set").val()); i++) {
+        }
+        var ret = parseInt($("input.set").val());
+        var tmp = 1;
+        if (ret > 10 || ret < 1) {
+            tmp = 1;
+            addToConsole("1" + "<br>");
+        } else {
+            tmp = ret;
+            addToConsole(ret + "<br>");
+        }
+        for (var i = 0; i < tmp; i++) {
             if (status == 0) {
                 $(".voters").append("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Votant "+(i + 1)+"</span></input>");
             } else {
@@ -64,7 +73,12 @@ $(document).ready(function() {
                 }
                 addToConsole(parseInt($("input.vote").val())+"<br>");
             });
-            Votrice.methods.vote(parseInt($("input.vote").val())).send({from: accounts[voter]});
+            var vote = parseInt($("input.vote").val());
+            if (vote > 10 || vote < 1) {
+                Votrice.methods.vote(1).send({from: accounts[voter]});
+            } else {
+                Votrice.methods.vote(vote).send({from: accounts[voter]});
+            }
 		} else {
             Votrice.methods.didVote(accounts[voter]).call((err, value) => {
                 if (value == false) {
@@ -72,9 +86,15 @@ $(document).ready(function() {
                 } else {
                     addToConsole("A déjà voté ! : VOTE ANNULÉ : ");
                 }
-                addToConsole(parseInt($("input.vote").val())+"<br>");
             });
-            Votrice.vote(parseInt($("input.vote").val()));
+            var vote = parseInt($("input.vote").val());
+            if (vote > 10 || vote < 1) {
+                Votrice.vote(1);
+                addToConsole("1<br>");
+            } else {
+                Votrice.vote(vote);
+                addToConsole(parseInt($("input.vote").val())+"<br>");
+            }
 		}
     });
     // button get
@@ -82,14 +102,16 @@ $(document).ready(function() {
         // If web3.js 1.0 is being used
         if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.getWinningProject().call((err, value) => {
-                $(".value").html(Number(value));
-                addToConsole("Vainqueur demandé (web3) : " + value + "<br>");
+                var nbr = Number(value) + 1;
+                $(".value").html(nbr);
+                addToConsole("Vainqueur demandé (web3) : " + nbr + "<br>");
             });
 		} else {
             Votrice.getWinningProject().then((value) => {
-                $(".value").html(Number(value));
+                var nbr = Number(value) + 1;
+                $(".value").html(nbr);
+                addToConsole("Vainqueur demandé : " + nbr + "<br>");
 		    });
-		    addToConsole("Vainqueur demandé : " + value + "<br>");
 		}
     });
 });
