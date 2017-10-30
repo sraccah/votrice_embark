@@ -1,9 +1,13 @@
 {
-  "0x9f17c0c31d6f0fcf47b1c514604726e4b4b20618518a4ff6030dad934e60ed4d": {
+  "0x85702ce30c24bcf47d7f7ce9c8910b0947ce054804c4048f2725f5f4b7b07d6b": {
     "contracts": {
+      "0x6325f3c48bfeaf1b3203589b9aa4b94fde41da33ebad22f36957f9cccbad6a27": {
+        "name": "Votrice",
+        "address": "0x1a7bc8a43830b1819b459dec4cf600df2df6ae8e"
+      },
       "0xf8c4476991c38e131cc817e2d0d9c514c5a8e689697ec78ddb5a56249a00c002": {
         "name": "Votrice",
-        "address": "0xf679ccf34d7d4f8bc6530d9084077d7c4326acae"
+        "address": "0xc8b07ec21cfd96b61fbac9aa2796fe9efe6643f5"
       }
     },
     "name": "development"
