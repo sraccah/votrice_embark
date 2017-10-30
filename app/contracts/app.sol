@@ -32,18 +32,13 @@ function setChoices(uint8 len) public {
     choices.length = len;
 }
 
-//function to set the voter
-function setAccounts() public {
-    choices[0].count = 11;
-}
-
 // function to vote for someone
 function vote(uint8 myChoice) public {
     Voter storage sender = voters[msg.sender];
     require(!sender.voted && myChoice <= choices.length && myChoice > 0);
     sender.voted = true;
     sender.vote = myChoice;
-    choices[myChoice].count += 1;
+    choices[myChoice - 1].count += 1;
 }
 
 // function to check if the sender has voted
