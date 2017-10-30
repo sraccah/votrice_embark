@@ -53,8 +53,8 @@ function vote(uint8 myChoice) public {
 }
 
 // function to check if the sender has voted
-function didVote() public constant returns (bool hasVoted) {
-    Voter memory sender = voters[msg.sender];
+function didVote(address caller) public constant returns (bool hasVoted) {
+    Voter memory sender = voters[caller];
     if (sender.voted == true) {
         return true;
     } else {
