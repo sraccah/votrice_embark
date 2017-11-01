@@ -29,6 +29,6 @@ h3 {
     display: none;
 }
 
-.winner {
+.winner, .winners {
     margin-bottom: 1%;
 }
