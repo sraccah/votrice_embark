@@ -1,8 +1,9 @@
-// add logs to console
+// CONSOLE
 var addToConsole = function(txt) {
     $(".logs").append(txt);
 };
 
+// DAPP
 $(document).ready(function() {
     // index of the address
     var voter = 0;
@@ -10,6 +11,8 @@ $(document).ready(function() {
     var status = 0;
     // accounts contain all addresses
     var accounts = [];
+    // accounts contain all winners
+    var winners = [];
     // button set
   	$("button.set").click(function() {
 		// If web3.js 1.0 is being used
@@ -98,18 +101,25 @@ $(document).ready(function() {
     });
     // button get
   	$("button.get").click(function() {
+        $(".winners").empty();
         // If web3.js 1.0 is being used
         if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.getWinningProject().call((err, value) => {
-                var nbr = Number(value) + 1;
-                $(".value").html(nbr);
-                addToConsole("Vainqueur demandé (web3) : " + nbr + "<br>");
+                addToConsole("Vainqueurs demandé (web3) : ");
+                value.forEach((element) => {
+                    var nbr = Number(element) + 1;
+                    $(".winners").append("<p>Projet " + nbr + "</p>");
+                }, this);
+                addToConsole(value + "<br>");
             });
 		} else {
             Votrice.getWinningProject().then((value) => {
-                var nbr = Number(value) + 1;
-                $(".value").html(nbr);
-                addToConsole("Vainqueur demandé : " + nbr + "<br>");
+                addToConsole("Vainqueurs demandé : ");
+                value.forEach((element) => {
+                    var nbr = Number(element) + 1;
+                    $(".winners").append("<p>Projet " + nbr + "</p>");
+                }, this);
+                addToConsole(value + "<br>");
 		    });
 		}
     });

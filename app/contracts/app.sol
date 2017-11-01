@@ -6,7 +6,7 @@ contract Votrice {
 // voter structure
 struct Voter {
     bool voted; // has voted ?
-    uint8 vote; // index of the choice
+    uint vote; // index of the choice
 }
 
 // project stucture
@@ -20,6 +20,8 @@ address public creator;
 mapping(address => Voter) public voters;
 // choices
 Project[] public choices;
+// winners
+uint[] public winners;
 
 // constructor
 function Votrice() public {
@@ -28,12 +30,12 @@ function Votrice() public {
 }
 
 //function to add contestants
-function setChoices(uint8 len) public {
+function setChoices(uint len) public {
     choices.length = len;
 }
 
 // function to vote for someone
-function vote(uint8 myChoice) public {
+function vote(uint myChoice) public {
     Voter storage sender = voters[msg.sender];
     require(!sender.voted && myChoice <= choices.length && myChoice > 0);
     sender.voted = true;
@@ -52,13 +54,17 @@ function didVote(address caller) public constant returns (bool hasVoted) {
 }
 
 // function to get the most voted choice
-function getWinningProject() public constant returns (uint8 winningProject) {
-    uint256 winningCount = 0;
-    for (uint8 j = 0; j < choices.length; j++) {
-        if (choices[j].count > winningCount) {
-            winningCount = choices[j].count;
-            winningProject = j;
+function getWinningProject() public returns (uint[]) {
+    uint winningCount = 0;
+    for (uint i = 0; i < choices.length; i++) {
+        if (choices[i].count == winningCount) {
+            winners.push(i);
+        }
+        if (choices[i].count > winningCount) {
+            winningCount = choices[i].count;
+            winners = [i];
         }
     }
+    return winners;
 }
 }
