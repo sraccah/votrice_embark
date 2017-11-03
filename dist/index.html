@@ -21,22 +21,23 @@
             <div class="page-header" id="banner">
                 <div class="row">
                     <!-- INFOS -->
-                    <div class="col-md-6 col-sm-12">
+                    <div class="col-md-5 col-sm-12">
                         <h1>VOTRICE</h1>
-                        <p class="lead">Notre première DAPP créee pour la Matrice.</p>
+                        <p class="lead">Première DAPP créee pour la Matrice.</p>
                         <a href="http://embark.readthedocs.io/en/latest/usage.html" class="btn btn-success">DOC Embark</a>
                         <a href="https://bootswatch.com/cyborg/" class="btn btn-default">DOC Template</a>
                     </div>
-                    <!-- CONSOLE -->
-                    <div class="console col-md-6 col-sm-12">
-                        <div class="panel panel-info">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Console</h3>
-                            </div>
-                            <div class="panel-body">
-                                <div class="logs"></div>
-                            </div>
-                        </div>
+                    <!-- Projets -->
+                    <h3>Projets</h3>
+                    <div class="col-md-7 col-sm-12">
+                        <div>Jérome/Stéphane : 1 : 0xe5f9a1d4e594ce6c48068c7227e49193875fc181</div>
+                        <div>Luc/dity : 2 : 0x4d6e6255ccbd5e514e3e6967c32eba2365f4d68b</div>
+                        <div>Scohen/Arthur : 3 : 0x403b2a590009d26f1def7f6f1f471819ac4f97ef</div>
+                        <div>Adelin/Ulysse : 4 : 0x003ae1df1a1007445d2fcc9beed6925ee2f198c4</div>
+                        <div>Ejaunet/Cjumelin/Nicolas : 5 : 0x215b7e5ec8c2e12d23805854121199ce516cb0a7</div>
+                        <div>Adrien : 6 : 0x3fe9c278993c986fa3ea6d901dbe742ec402af5d</div>
+                        <div>Patrick : 7 : 0x46bfeef38fe9e09b9096376da99949e90225690e</div>
+                        <div>Etienne et Timothy : 8 0x20678d4eed23a0825342d47ea8fa2b41f4dfee5e</div>
                     </div>
                 </div>
             </div>
@@ -45,10 +46,10 @@
         <div class="container">
             <div class="col-sm-12">
                 <!-- setChoices() -->
-                <h4>Set the projects choices</h4>
+                <h4>Qui vote ?</h4>
                 <div class="form-group form-inline">
                     <input type="text" class="set form-control" value="10">
-                    <button class="set btn btn-warning">Set</button>
+                    <button class="set btn btn-warning">Ajouter</button>
                 </div>
                 <!-- setVoter() -->
                 <div class="form-group form-inline">
@@ -56,18 +57,24 @@
                     <button class="voter btn btn-warning">Set</button>
                 </div>
                 <!-- vote() -->
-                <h4>Give your vote to a project</h4>
+                <h4>Pour qui est le vote ?</h4>
                 <div class="form-group form-inline">
                     <input type="text" class="vote form-control" value="1">
-                    <button class="vote btn btn-primary">Vote</button>
+                    <button class="vote btn btn-primary">Voter</button>
                 </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-sm-12">
                 <!-- getWinningProject() -->
-                <h4>Get the winner project</h4>
-                <div class="form-group">
-                    <div class="winner text-danger">WINNERS :</div>
-                    <div class="winners text-success"></div>
-                    <button class="get btn btn-danger">Get Winner</button>
-                </div>
+                <div class="well">
+                        <h4>Et le gagnant est ?</h4>
+                        <div class="form-group">
+                            <button class="get btn btn-danger">GAGNANT</button>
+                            <div class="winner text-danger">WINNERS :</div>
+                            <div class="winners text-success"></div>
+                        </div>
+                    </div>
             </div>
         </div>
 	</body>

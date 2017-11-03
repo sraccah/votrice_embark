@@ -1,8 +1,3 @@
-// CONSOLE
-var addToConsole = function(txt) {
-    $(".logs").append(txt);
-};
-
 // DAPP
 $(document).ready(function() {
     // index of the address
@@ -13,24 +8,26 @@ $(document).ready(function() {
     var accounts = [];
     // accounts contain all winners
     var winners = [];
+    // store all accounts
+    web3.eth.getAccounts().then((value) => {
+        value.forEach((element) => {
+            accounts.push(element);
+        })
+    });
     // button set
   	$("button.set").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.setChoices(parseInt($("input.set").val())).send({from: web3.eth.defaultAccount});
-            addToConsole("Nombre de projets set (web3) : ");
 		} else {
             Votrice.setChoices(parseInt($("input.set").val()));
-            addToConsole("Nombre de projets set : ");
         }
         var ret = parseInt($("input.set").val());
         var tmp = 1;
         if (ret > 10 || ret < 1) {
             tmp = 1;
-            addToConsole("1" + "<br>");
         } else {
             tmp = ret;
-            addToConsole(ret + "<br>");
         }
         for (var i = 0; i < tmp; i++) {
             if (status == 0) {
@@ -42,39 +39,18 @@ $(document).ready(function() {
         }
         status = 1;
         $(".voter").show();
-        web3.eth.getAccounts().then((value) => {
-            value.forEach((element) => {
-                accounts.push(element);
-            })
-        });
     });
     // button voter
   	$("button.voter").click(function() {
-		// If web3.js 1.0 is being used
-		if (EmbarkJS.isNewWeb3()) {
-            addToConsole("Votant (web3) : ");
-		} else {
-            addToConsole("Votant : ");
-        }
         if ($("input[name=voter]:checked").prop('checked')) {
-            addToConsole(parseInt($("input[name=voter]:checked").val()) + 1 +"<br>");
             voter = parseInt($("input[name=voter]:checked").val());
-        } else {
-            addToConsole("default address : voters[0] <br>");
         }
     });
     // button vote
   	$("button.vote").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.didVote(accounts[voter]).call((err, value) => {
-                if (value == false) {
-                    addToConsole("A voté ! (web3) : ");
-                } else {
-                    addToConsole("A déjà voté ! (web3) : VOTE ANNULÉ : ");
-                }
-                addToConsole(parseInt($("input.vote").val())+"<br>");
-            });
+            Votrice.methods.didVote(accounts[voter]).call();
             var vote = parseInt($("input.vote").val());
             if (vote > 10 || vote < 1) {
                 Votrice.methods.vote(1).send({from: accounts[voter]});
@@ -82,20 +58,12 @@ $(document).ready(function() {
                 Votrice.methods.vote(vote).send({from: accounts[voter]});
             }
 		} else {
-            Votrice.methods.didVote(accounts[voter]).call((err, value) => {
-                if (value == false) {
-                    addToConsole("A voté ! : ");
-                } else {
-                    addToConsole("A déjà voté ! : VOTE ANNULÉ : ");
-                }
-            });
+            Votrice.methods.didVote(accounts[voter]).call();
             var vote = parseInt($("input.vote").val());
             if (vote > 10 || vote < 1) {
                 Votrice.vote(1);
-                addToConsole("1<br>");
             } else {
                 Votrice.vote(vote);
-                addToConsole(parseInt($("input.vote").val())+"<br>");
             }
 		}
     });
@@ -105,21 +73,17 @@ $(document).ready(function() {
         // If web3.js 1.0 is being used
         if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.getWinningProject().call((err, value) => {
-                addToConsole("Vainqueurs demandé (web3) : ");
                 value.forEach((element) => {
                     var nbr = Number(element) + 1;
-                    $(".winners").append("<p>Projet " + nbr + "</p>");
+                    $(".winners").append("<p>Projet " + nbr + " : " + accounts[nbr - 1] + "</p>");
                 }, this);
-                addToConsole(value + "<br>");
             });
 		} else {
             Votrice.getWinningProject().then((value) => {
-                addToConsole("Vainqueurs demandé : ");
                 value.forEach((element) => {
                     var nbr = Number(element) + 1;
-                    $(".winners").append("<p>Projet " + nbr + "</p>");
+                    $(".winners").append("<p>Projet " + nbr + " : " + accounts[nbr - 1] + "</p>");
                 }, this);
-                addToConsole(value + "<br>");
 		    });
 		}
     });
