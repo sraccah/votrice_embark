@@ -5,69 +5,36 @@ var addToConsole = function(txt) {
 
 // DAPP
 $(document).ready(function() {
-    // index of the address
-    var voter = 0;
-    // status of the setChoices methode
-    var status = 0;
-    // accounts contain all addresses
-    var accounts = [];
+    // accounts contain all winners
+    var projects = [];
+    // accounts contain all winners
+    var projects_count = 0;
     // accounts contain all winners
     var winners = [];
     // button set
   	$("button.set").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.setChoices(parseInt($("input.set").val())).send({from: web3.eth.defaultAccount});
-            addToConsole("Nombre de projets set (web3) : ");
+            Votrice.methods.addChoice($("input.set").val()).send({from: web3.eth.defaultAccount});
+            addToConsole("Projet ajouté (web3) : ");
 		} else {
-            Votrice.setChoices(parseInt($("input.set").val()));
-            addToConsole("Nombre de projets set : ");
+            Votrice.setChoices($("input.set").val());
+            addToConsole("Projet ajouté : ");
         }
-        var ret = parseInt($("input.set").val());
-        var tmp = 1;
-        if (ret > 10 || ret < 1) {
-            tmp = 1;
-            addToConsole("1" + "<br>");
+        if (projects_count == 0) {
+            $(".projects").html("<div>Project : "+ $("input.set").val() +" : "+ projects_count +"</div>");
         } else {
-            tmp = ret;
-            addToConsole(ret + "<br>");
+            $(".projects").append("<div>Project : "+ $("input.set").val() +" : "+ projects_count +"</div>");
         }
-        for (var i = 0; i < tmp; i++) {
-            if (status == 0) {
-                $(".voters").append("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Votant "+(i + 1)+"</span></input>");
-            } else {
-                $(".voters").html("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Votant "+(i + 1)+"</span></input>");
-                status = 0;
-            }
-        }
-        status = 1;
-        $(".voter").show();
-        web3.eth.getAccounts().then((value) => {
-            value.forEach((element) => {
-                accounts.push(element);
-            })
-        });
-    });
-    // button voter
-  	$("button.voter").click(function() {
-		// If web3.js 1.0 is being used
-		if (EmbarkJS.isNewWeb3()) {
-            addToConsole("Votant (web3) : ");
-		} else {
-            addToConsole("Votant : ");
-        }
-        if ($("input[name=voter]:checked").prop('checked')) {
-            addToConsole(parseInt($("input[name=voter]:checked").val()) + 1 +"<br>");
-            voter = parseInt($("input[name=voter]:checked").val());
-        } else {
-            addToConsole("default address : voters[0] <br>");
-        }
+        addToConsole(" "+ $("input.set").val() +" <br>");
+        projects[projects_count] = $("input.set").val();
+        projects_count += 1;
     });
     // button vote
   	$("button.vote").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.didVote(accounts[voter]).call((err, value) => {
+            Votrice.methods.didVote(web3.eth.defaultAccount).call((err, value) => {
                 if (value == false) {
                     addToConsole("A voté ! (web3) : ");
                 } else {
@@ -77,9 +44,9 @@ $(document).ready(function() {
             });
             var vote = parseInt($("input.vote").val());
             if (vote > 10 || vote < 1) {
-                Votrice.methods.vote(1).send({from: accounts[voter]});
+                Votrice.methods.vote(1).send({from: web3.eth.defaultAccount});
             } else {
-                Votrice.methods.vote(vote).send({from: accounts[voter]});
+                Votrice.methods.vote(vote).send({from: web3.eth.defaultAccount});
             }
 		} else {
             Votrice.methods.didVote(accounts[voter]).call((err, value) => {
@@ -104,7 +71,7 @@ $(document).ready(function() {
         $(".winners").empty();
         // If web3.js 1.0 is being used
         if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.getWinningProject().call((err, value) => {
+            Votrice.methods.getWinners().call((err, value) => {
                 addToConsole("Vainqueurs demandé (web3) : ");
                 value.forEach((element) => {
                     var nbr = Number(element) + 1;
@@ -113,7 +80,7 @@ $(document).ready(function() {
                 addToConsole(value + "<br>");
             });
 		} else {
-            Votrice.getWinningProject().then((value) => {
+            Votrice.getWinners().then((value) => {
                 addToConsole("Vainqueurs demandé : ");
                 value.forEach((element) => {
                     var nbr = Number(element) + 1;

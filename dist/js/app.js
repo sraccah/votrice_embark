@@ -62522,7 +62522,7 @@ __reduce(["$WEB3","http://localhost:8545"],function(prev, value, next) {
 
 
 __mainContext.__loadManagerInstance.execWhenReady(function() {
-  __mainContext.Votrice = new EmbarkJS.Contract({abi: [{"constant":false,"inputs":[{"name":"myChoice","type":"uint256"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"creator","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"len","type":"uint256"}],"name":"setChoices","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"caller","type":"address"}],"name":"didVote","outputs":[{"name":"hasVoted","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"winners","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"voters","outputs":[{"name":"voted","type":"bool"},{"name":"vote","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"getWinningProject","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"choices","outputs":[{"name":"count","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}], address: '0x8f022092b4ddb1c22a382dc4f2076b41ba291ab4', code: '6060604052341561000f57600080fd5b60008054600160a060020a03191633600160a060020a0316179055600161003760028261003d565b50610087565b81548183558181151161006157600083815260209020610061918101908301610066565b505050565b61008491905b80821115610080576000815560010161006c565b5090565b90565b610544806100966000396000f3006060604052361561008b5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630121b93f811461009057806302d05d3f146100a857806311cea3e0146100d7578063354d91de146100ed578063a2fb117514610120578063a3ec138d14610148578063b8a4129914610181578063f6fd7fde146101e7575b600080fd5b341561009b57600080fd5b6100a66004356101fd565b005b34156100b357600080fd5b6100bb61027b565b604051600160a060020a03909116815260200160405180910390f35b34156100e257600080fd5b6100a660043561028a565b34156100f857600080fd5b61010c600160a060020a036004351661029a565b604051901515815260200160405180910390f35b341561012b57600080fd5b6101366004356102fd565b60405190815260200160405180910390f35b341561015357600080fd5b610167600160a060020a036004351661031c565b604051911515825260208201526040908101905180910390f35b341561018c57600080fd5b61019461033b565b60405160208082528190810183818151815260200191508051906020019060200280838360005b838110156101d35780820151838201526020016101bb565b505050509050019250505060405180910390f35b34156101f257600080fd5b610136600435610450565b600160a060020a0333166000908152600160205260409020805460ff1615801561022957506002548211155b80156102355750600082115b151561024057600080fd5b805460ff19166001908117825581810183905560028054600019850190811061026557fe5b6000918252602090912001805490910190555050565b600054600160a060020a031681565b8061029660028261045e565b5050565b60006102a4610487565b600160a060020a03831660009081526001602052604090819020908051908101604052815460ff16151581526001909101546020820152905080511515600114156102f257600191506102f7565b600091505b50919050565b600380548290811061030b57fe5b600091825260209091200154905081565b6001602081905260009182526040909120805491015460ff9091169082565b61034361049e565b6000805b6002548110156103f8578160028281548110151561036157fe5b6000918252602090912001541415610395576003805460018101610385838261045e565b5060009182526020909120018190555b816002828154811015156103a557fe5b60009182526020909120015411156103f05760028054829081106103c557fe5b6000918252602091829020015492506040519081016040528181526103ee9060039060016104b0565b505b600101610347565b600380548060200260200160405190810160405280929190818152602001828054801561044457602002820191906000526020600020905b815481526020019060010190808311610430575b50505050509250505090565b600280548290811061030b57fe5b815481835581811511610482576000838152602090206104829181019083016104fb565b505050565b604080519081016040526000808252602082015290565b60206040519081016040526000815290565b8280548282559060005260206000209081019282156104eb579160200282015b828111156104eb5782518255916020019190600101906104d0565b506104f79291506104fb565b5090565b61051591905b808211156104f75760008155600101610501565b905600a165627a7a723058203610b942fd6b24d69a8670ad6abbf3bf95ab47359e1ed2ffafbf5200ac29f23b0029', gasEstimates: {"creation":[null,269600],"external":{"choices(uint256)":824,"creator()":545,"didVote(address)":1098,"getWinningProject()":null,"setChoices(uint256)":null,"vote(uint256)":61533,"voters(address)":887,"winners(uint256)":758},"internal":{}}});
+  __mainContext.Votrice = new EmbarkJS.Contract({abi: [{"constant":false,"inputs":[{"name":"myChoice","type":"uint256"}],"name":"vote","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"creator","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"caller","type":"address"}],"name":"didVote","outputs":[{"name":"hasVoted","type":"bool"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"myName","type":"string"}],"name":"addChoice","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"winners","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"voters","outputs":[{"name":"voted","type":"bool"},{"name":"vote","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"getWinners","outputs":[{"name":"","type":"uint256[]"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"choices","outputs":[{"name":"name","type":"string"},{"name":"count","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"}], address: '0xbbd1de0a31df717b83c749b3cfd27059dc29113d', code: '6060604052341561000f57600080fd5b60008054600160a060020a033316600160a060020a031990911617905561079d8061003b6000396000f3006060604052361561008b5763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416630121b93f811461009057806302d05d3f146100a8578063354d91de146100d75780635fa520bb1461010a578063a2fb11751461015b578063a3ec138d14610183578063df15c37e146101bc578063f6fd7fde14610222575b600080fd5b341561009b57600080fd5b6100a66004356102c8565b005b34156100b357600080fd5b6100bb61034e565b604051600160a060020a03909116815260200160405180910390f35b34156100e257600080fd5b6100f6600160a060020a036004351661035d565b604051901515815260200160405180910390f35b341561011557600080fd5b6100a660046024813581810190830135806020601f820181900481020160405190810160405281815292919060208401838380828437509496506103c095505050505050565b341561016657600080fd5b61017160043561041e565b60405190815260200160405180910390f35b341561018e57600080fd5b6101a2600160a060020a036004351661043d565b604051911515825260208201526040908101905180910390f35b34156101c757600080fd5b6101cf61045c565b60405160208082528190810183818151815260200191508051906020019060200280838360005b8381101561020e5780820151838201526020016101f6565b505050509050019250505060405180910390f35b341561022d57600080fd5b610238600435610584565b60405160208101829052604080825283546002600019610100600184161502019091160490820181905281906060820190859080156102b85780601f1061028d576101008083540402835291602001916102b8565b820191906000526020600020905b81548152906001019060200180831161029b57829003601f168201915b5050935050505060405180910390f35b600160a060020a0333166000908152600160205260409020805460ff161580156102f457506002548211155b80156103005750600082115b151561030b57600080fd5b805460ff19166001908117825581810183905560028054600019850190811061033057fe5b60009182526020909120600160029092020101805490910190555050565b600054600160a060020a031681565b60006103676105ad565b600160a060020a03831660009081526001602052604090819020908051908101604052815460ff16151581526001909101546020820152905080511515600114156103b557600191506103ba565b600091505b50919050565b60028054600181016103d283826105c4565b91600052602060002090600202016000604080519081016040528481526000602082015291905081518190805161040d9291602001906105f5565b506020820151816001015550505050565b600380548290811061042c57fe5b600091825260209091200154905081565b6001602081905260009182526040909120805491015460ff9091169082565b610464610673565b6000805b60025481101561052c578160028281548110151561048257fe5b90600052602060002090600202016001015414156104bc5760038054600181016104ac8382610685565b5060009182526020909120018190555b816002828154811015156104cc57fe5b90600052602060002090600202016001015411156105245760028054829081106104f257fe5b906000526020600020906002020160010154915060206040519081016040528181526105229060039060016106a9565b505b600101610468565b600380548060200260200160405190810160405280929190818152602001828054801561057857602002820191906000526020600020905b815481526020019060010190808311610564575b50505050509250505090565b600280548290811061059257fe5b60009182526020909120600290910201600181015490915082565b604080519081016040526000808252602082015290565b8154818355818115116105f0576002028160020283600052602060002091820191016105f091906106e3565b505050565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061063657805160ff1916838001178555610663565b82800160010185558215610663579182015b82811115610663578251825591602001919060010190610648565b5061066f929150610710565b5090565b60206040519081016040526000815290565b8154818355818115116105f0576000838152602090206105f0918101908301610710565b8280548282559060005260206000209081019282156106635791602002820182811115610663578251825591602001919060010190610648565b61070d91905b8082111561066f5760006106fd828261072a565b50600060018201556002016106e9565b90565b61070d91905b8082111561066f5760008155600101610716565b50805460018160011615610100020316600290046000825580601f10610750575061076e565b601f01602090049060005260206000209081019061076e9190610710565b505600a165627a7a72305820b3d8f6da547647910578cb43b95417c407c7cb4a16bfbd925bea35df57381bef0029', gasEstimates: {"creation":[20792,389800],"external":{"addChoice(string)":null,"choices(uint256)":null,"creator()":545,"didVote(address)":1076,"getWinners()":null,"vote(uint256)":61553,"voters(address)":887,"winners(uint256)":758},"internal":{}}});
 
 });
 
@@ -62553,69 +62553,36 @@ var addToConsole = function(txt) {
 
 // DAPP
 $(document).ready(function() {
-    // index of the address
-    var voter = 0;
-    // status of the setChoices methode
-    var status = 0;
-    // accounts contain all addresses
-    var accounts = [];
+    // accounts contain all winners
+    var projects = [];
+    // accounts contain all winners
+    var projects_count = 0;
     // accounts contain all winners
     var winners = [];
     // button set
   	$("button.set").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.setChoices(parseInt($("input.set").val())).send({from: web3.eth.defaultAccount});
-            addToConsole("Nombre de projets set (web3) : ");
+            Votrice.methods.addChoice($("input.set").val()).send({from: web3.eth.defaultAccount});
+            addToConsole("Projet ajouté (web3) : ");
 		} else {
-            Votrice.setChoices(parseInt($("input.set").val()));
-            addToConsole("Nombre de projets set : ");
+            Votrice.setChoices($("input.set").val());
+            addToConsole("Projet ajouté : ");
         }
-        var ret = parseInt($("input.set").val());
-        var tmp = 1;
-        if (ret > 10 || ret < 1) {
-            tmp = 1;
-            addToConsole("1" + "<br>");
+        if (projects_count == 0) {
+            $(".projects").html("<div>Project : "+ $("input.set").val() +" : "+ projects_count +"</div>");
         } else {
-            tmp = ret;
-            addToConsole(ret + "<br>");
+            $(".projects").append("<div>Project : "+ $("input.set").val() +" : "+ projects_count +"</div>");
         }
-        for (var i = 0; i < tmp; i++) {
-            if (status == 0) {
-                $(".voters").append("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Votant "+(i + 1)+"</span></input>");
-            } else {
-                $(".voters").html("<input type='radio' name='voter' value='"+i+"'><span id='voter'>Votant "+(i + 1)+"</span></input>");
-                status = 0;
-            }
-        }
-        status = 1;
-        $(".voter").show();
-        web3.eth.getAccounts().then((value) => {
-            value.forEach((element) => {
-                accounts.push(element);
-            })
-        });
-    });
-    // button voter
-  	$("button.voter").click(function() {
-		// If web3.js 1.0 is being used
-		if (EmbarkJS.isNewWeb3()) {
-            addToConsole("Votant (web3) : ");
-		} else {
-            addToConsole("Votant : ");
-        }
-        if ($("input[name=voter]:checked").prop('checked')) {
-            addToConsole(parseInt($("input[name=voter]:checked").val()) + 1 +"<br>");
-            voter = parseInt($("input[name=voter]:checked").val());
-        } else {
-            addToConsole("default address : voters[0] <br>");
-        }
+        addToConsole(" "+ $("input.set").val() +" <br>");
+        projects[projects_count] = $("input.set").val();
+        projects_count += 1;
     });
     // button vote
   	$("button.vote").click(function() {
 		// If web3.js 1.0 is being used
 		if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.didVote(accounts[voter]).call((err, value) => {
+            Votrice.methods.didVote(web3.eth.defaultAccount).call((err, value) => {
                 if (value == false) {
                     addToConsole("A voté ! (web3) : ");
                 } else {
@@ -62625,9 +62592,9 @@ $(document).ready(function() {
             });
             var vote = parseInt($("input.vote").val());
             if (vote > 10 || vote < 1) {
-                Votrice.methods.vote(1).send({from: accounts[voter]});
+                Votrice.methods.vote(1).send({from: web3.eth.defaultAccount});
             } else {
-                Votrice.methods.vote(vote).send({from: accounts[voter]});
+                Votrice.methods.vote(vote).send({from: web3.eth.defaultAccount});
             }
 		} else {
             Votrice.methods.didVote(accounts[voter]).call((err, value) => {
@@ -62652,7 +62619,7 @@ $(document).ready(function() {
         $(".winners").empty();
         // If web3.js 1.0 is being used
         if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.getWinningProject().call((err, value) => {
+            Votrice.methods.getWinners().call((err, value) => {
                 addToConsole("Vainqueurs demandé (web3) : ");
                 value.forEach((element) => {
                     var nbr = Number(element) + 1;
@@ -62661,7 +62628,7 @@ $(document).ready(function() {
                 addToConsole(value + "<br>");
             });
 		} else {
-            Votrice.getWinningProject().then((value) => {
+            Votrice.getWinners().then((value) => {
                 addToConsole("Vainqueurs demandé : ");
                 value.forEach((element) => {
                     var nbr = Number(element) + 1;

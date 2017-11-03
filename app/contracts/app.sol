@@ -1,4 +1,4 @@
-pragma solidity ^0.4.15;
+pragma solidity ^0.4.17;
 
 /// @title Vote for the best DAPP
 contract Votrice {
@@ -11,6 +11,7 @@ struct Voter {
 
 // project stucture
 struct Project {
+    string name; // name of the project
     uint count; // number of votes for this project
 }
 
@@ -20,18 +21,20 @@ address public creator;
 mapping(address => Voter) public voters;
 // choices
 Project[] public choices;
-// winners
+// winners index
 uint[] public winners;
 
 // constructor
 function Votrice() public {
     creator = msg.sender;
-    choices.length = 1;
 }
 
 //function to add contestants
-function setChoices(uint len) public {
-    choices.length = len;
+function addChoice(string myName) public {
+    choices.push(Project({
+        name: myName,
+        count: 0
+    }));
 }
 
 // function to vote for someone
@@ -54,7 +57,7 @@ function didVote(address caller) public constant returns (bool hasVoted) {
 }
 
 // function to get the most voted choice
-function getWinningProject() public returns (uint[]) {
+function getWinners() public returns (uint[]) {
     uint winningCount = 0;
     for (uint i = 0; i < choices.length; i++) {
         if (choices[i].count == winningCount) {
@@ -67,4 +70,6 @@ function getWinningProject() public returns (uint[]) {
     }
     return winners;
 }
+
+// END
 }
