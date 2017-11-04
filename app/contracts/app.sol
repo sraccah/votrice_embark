@@ -7,6 +7,7 @@ contract Votrice {
 struct Voter {
     bool voted; // has voted ?
     uint vote; // index of the choice
+    bool added; // has added his project ?
 }
 
 // project stucture
@@ -23,18 +24,33 @@ mapping(address => Voter) public voters;
 Project[] public choices;
 // winners index
 uint[] public winners;
+// user of the contract
+address public user = msg.sender;
 
 // constructor
 function Votrice() public {
     creator = msg.sender;
 }
 
-//function to add contestants
+// function to add contestants
 function addChoice(string myName) public {
+    Voter storage sender = voters[msg.sender];
+    assert(!sender.voted && !sender.added);
     choices.push(Project({
         name: myName,
         count: 0
     }));
+    sender.added = true;
+}
+
+// get sender address
+function getSenderAddress() public constant returns (address) {
+    return msg.sender;
+}
+
+// get contract address
+function getContractAddress() public constant returns (address) {
+    return this;
 }
 
 // function to vote for someone

@@ -43,24 +43,19 @@
         </div>
 		<!-- CONTAINER DAPP -->
         <div class="container">
-            <div class="col-sm-12">
+            <div class="col-sm-9">
                 <!-- setChoices() -->
                 <h4>Set the projects choices</h4>
                 <div class="form-group form-inline">
                     <input type="text" class="set form-control" placeholder="name">
                     <button class="set btn btn-warning">Add Project</button>
                 </div>
-                <!-- Projects-->
-                <div class="form-group form-inline">
-                    <div class="projects"></div>
-                </div>
-                <!-- vote() -->
-                <div class="form-group form-inline">
-                    <h4>Give your vote to a project</h4>
-                    <input type="text" class="vote form-control" value="1">
-                    <button class="vote btn btn-primary">Vote</button>
-                </div>
-                <!-- getWinningProject() -->
+                <!-- setProjects() -->
+                <h3>Projects</h3>
+                <div class="well allprojects"></div>
+            </div>
+            <!-- getWinners() -->
+            <div class="col-sm-3">
                 <h4>Get the winner project</h4>
                 <div class="form-group">
                     <div class="winner text-danger">WINNERS :</div>
