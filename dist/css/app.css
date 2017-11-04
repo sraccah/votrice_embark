@@ -29,6 +29,11 @@ h3 {
     display: none;
 }
 
+.vote {
+    margin-left: 1%;
+}
+
 .winner, .winners {
+    margin-top: 1%;
     margin-bottom: 1%;
 }

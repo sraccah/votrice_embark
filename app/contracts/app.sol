@@ -24,8 +24,6 @@ mapping(address => Voter) public voters;
 Project[] public choices;
 // winners index
 uint[] public winners;
-// user of the contract
-address public user = msg.sender;
 
 // constructor
 function Votrice() public {
@@ -35,7 +33,7 @@ function Votrice() public {
 // function to add contestants
 function addChoice(string myName) public {
     Voter storage sender = voters[msg.sender];
-    assert(!sender.voted && !sender.added);
+    require(!sender.voted && !sender.added);
     choices.push(Project({
         name: myName,
         count: 0
@@ -66,6 +64,16 @@ function vote(uint myChoice) public {
 function didVote(address caller) public constant returns (bool hasVoted) {
     Voter memory sender = voters[caller];
     if (sender.voted == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// function to check if the sender has voted
+function didAdd(address caller) public constant returns (bool hasAdded) {
+    Voter memory sender = voters[caller];
+    if (sender.added == true) {
         return true;
     } else {
         return false;

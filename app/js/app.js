@@ -13,69 +13,68 @@ $(document).ready(function() {
     var winners = [];
     // all projects addresses
     var adresses = [];
+    if (projects_count == 0) {
+        $(".allprojects").html("<div>Project : "+projects[projects_count]+" : "+(projects_count+1)+"<button class=\"vote btn btn-default\" value=\""+projects_count+"\">Voter pour ce projet</button>"+"</div>");
+    } else {
+        $(".allprojects").append("<div>Project "+projects[projects_count]+" : "+(projects_count+1)+"<button class=\"vote btn btn-default\" value=\""+projects_count+"\">Voter pour ce projet</button>"+"</div>");
+    }
     // button set
   	$("button.set").click(function() {
-		// If web3.js 1.0 is being used
-        Votrice.methods.getSenderAddress().call().then((value) => {
-            adresses[projects_count] = value;
+        Votrice.methods.getSenderAddress().call().then((caller) => {
+            adresses[projects_count] = caller;
             if (EmbarkJS.isNewWeb3()) {
-                Votrice.methods.addChoice($("input.set").val()).send({from: value});
-                addToConsole("Projet ajouté (web3) : " + $("input.set").val() + "<br>address : " + value + "<br>");
+                Votrice.methods.didAdd(caller).call((value) => {
+                    if (value == false) {
+                        Votrice.methods.addChoice($("input.set").val()).send({from: value});
+                        addToConsole("Projet ajouté (web3) : " + $("input.set").val() + "<br>address : " + value + "<br>");
+                    } else {
+                        addToConsole("A déjà ajouter son projet ! (web3) : ACTION ANNULÉE <br>");
+                    }
+                });
             } else {
-                adresses[projects_count] = Votrice.setChoices($("input.set").val());
-                addToConsole("Projet ajouté : " + $("input.set").val() + "<br>address : " + value + "<br>");
+                Votrice.methods.didAdd(caller).call((value) => {
+                    if (value == false) {
+                        Votrice.addChoice($("input.set").val());
+                        addToConsole("Projet ajouté : " + $("input.set").val() + "<br>address : " + value + "<br>");
+                    } else {
+                        addToConsole("A déjà ajouter son projet ! : ACTION ANNULÉE <br>");
+                    }
+                });
             }
-            if (projects_count == 0) {
-                $(".allprojects").html("<div>Project "+ $("input.set").val() +" : "+ (projects_count + 1) +" : " + value + "<button class=\"vote btn btn-primary\" value=\""+projects_count+"\">Vote</button>" + "</div>");
-            } else {
-                $(".allprojects").append("<div>Project "+ $("input.set").val() +" : "+ (projects_count + 1) +" : " + value + "</div>");
-            }
-            projects[projects_count] = $("input.set").val();
             projects_count += 1;
         });
     });
     // button vote
   	$("button.vote").click(function() {
-		// If web3.js 1.0 is being used
-		if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.didVote(web3.eth.defaultAccount).call((value) => {
-                if (value == false) {
-                    addToConsole("A voté ! (web3) : ");
-                } else {
-                    addToConsole("A déjà voté ! (web3) : VOTE ANNULÉ : ");
-                }
-                addToConsole(parseInt($("input.vote").val())+"<br>");
-            });
-            var vote = parseInt($("input.vote").val());
-            if (vote > 10 || vote < 1) {
-                Votrice.methods.vote(1).send({from: web3.eth.defaultAccount});
+        Votrice.methods.getSenderAddress().call().then((caller) => {
+            if (EmbarkJS.isNewWeb3()) {
+                Votrice.methods.didVote(caller).call((value) => {
+                    if (value == false) {
+                        addToConsole("A voté ! (web3) <br>");
+                        var vote = parseInt($("button.vote").attr("value"));
+                        Votrice.methods.vote(vote).send({from: caller});
+                    } else {
+                        addToConsole("A déjà voté ! (web3) : VOTE ANNULÉ <br>");
+                    }
+                });
             } else {
-                Votrice.methods.vote(vote).send({from: web3.eth.defaultAccount});
+                Votrice.methods.didVote(caller).call((value) => {
+                    if (value == false) {
+                        addToConsole("A voté ! <br>");
+                        var vote = parseInt($("button.vote").attr("value"));
+                        Votrice.vote(vote);
+                    } else {
+                        addToConsole("A déjà voté ! : VOTE ANNULÉ <br>");
+                    }
+                });
             }
-		} else {
-            Votrice.methods.didVote(accounts[voter]).call((value) => {
-                if (value == false) {
-                    addToConsole("A voté ! : ");
-                } else {
-                    addToConsole("A déjà voté ! : VOTE ANNULÉ : ");
-                }
-            });
-            var vote = parseInt($("input.vote").val());
-            if (vote > 10 || vote < 1) {
-                Votrice.vote(1);
-                addToConsole("1<br>");
-            } else {
-                Votrice.vote(vote);
-                addToConsole(parseInt($("input.vote").val())+"<br>");
-            }
-		}
+        });
     });
     // button get
   	$("button.get").click(function() {
         $(".winners").empty();
-        // If web3.js 1.0 is being used
         if (EmbarkJS.isNewWeb3()) {
-            Votrice.methods.getWinners().call((value) => {
+            Votrice.methods.getWinners().call().then((value) => {
                 addToConsole("Vainqueurs demandé (web3) : ");
                 value.forEach((element) => {
                     var nbr = Number(element) + 1;
@@ -92,6 +91,6 @@ $(document).ready(function() {
                 }, this);
                 addToConsole(value + "<br>");
 		    });
-		}
+        }
     });
 });
