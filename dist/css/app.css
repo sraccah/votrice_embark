@@ -33,7 +33,12 @@ h3 {
     margin-left: 1%;
 }
 
-.winner, .winners {
+.winners {
     margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.winner {
+    margin-top: 2%;
     margin-bottom: 1%;
 }
