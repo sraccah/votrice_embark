@@ -6,22 +6,23 @@ var addToConsole = function(txt) {
 
 // DAPP
 $(document).ready(function() {
-    // all projects names
+    // all projects names                         !!!!!!!! A LOADER !!!!!!!!!
     var projects = [];
-    // counter for the index of the project
+    // counter for the index of the project       !!!!!!!! A CHANGER !!!!!!!!!
     var projects_count = 0;
     // contain all winners
     var winners = [];
-    // all projects addresses
+    // all projects addresses                     !!!!!!!! A CHANGER !!!!!!!!!
     var adresses = [];
+    var test;
     // get all projects and display them with the possibility to vote for them
     if (projects_count == 0) {
-        $(".allprojects").html("<div>Project : "+projects[projects_count]+" : "+(projects_count+1)+"<button class=\"vote btn btn-default\" value=\""+projects_count+"\">Voter pour ce projet</button>"+"</div>");
+        $(".allprojects").html("<div>Project : "+projects[projects_count]+" : "+(projects_count+1)+"<button class=\"vote btn btn-default\" value=\""+projects_count+"\">VOTER</button>"+"</div>");
     } else {
-        $(".allprojects").append("<div>Project : "+projects[projects_count]+" : "+(projects_count+1)+"<button class=\"vote btn btn-default\" value=\""+projects_count+"\">Voter pour ce projet</button>"+"</div>");
+        $(".allprojects").append("<div>Project : "+projects[projects_count]+" : "+(projects_count+1)+"<button class=\"vote btn btn-default\" value=\""+projects_count+"\">VOTER</button>"+"</div>");
     }
     // button set
-  	$("button.set").click(function() {
+  	$("button.set").click(() => {
         Votrice.methods.getSenderAddress().call().then((caller) => {
             adresses[projects_count] = caller;
             if (EmbarkJS.isNewWeb3()) {
@@ -34,7 +35,7 @@ $(document).ready(function() {
                     }
                 });
             } else {
-                Votrice.methods.didAdd(caller).call((value) => {
+                Votrice.methods.didAdd(caller).then((value) => {
                     if (value == false) {
                         Votrice.addChoice($("input.set").val());
                         addToConsole("Projet ajouté<br>name : " + $("input.set").val() + "<br>address : " + value + "<br>");
@@ -47,7 +48,7 @@ $(document).ready(function() {
         });
     });
     // button vote
-  	$("button.vote").click(function() {
+  	$("button.vote").click(() => {
         Votrice.methods.getSenderAddress().call().then((caller) => {
             if (EmbarkJS.isNewWeb3()) {
                 Votrice.methods.didVote(caller).call((value) => {
@@ -60,7 +61,7 @@ $(document).ready(function() {
                     }
                 });
             } else {
-                Votrice.methods.didVote(caller).call((value) => {
+                Votrice.methods.didVote(caller).then((value) => {
                     if (value == false) {
                         addToConsole("A voté ! <br>");
                         var vote = parseInt($("button.vote").attr("value"));
@@ -73,7 +74,7 @@ $(document).ready(function() {
         });
     });
     // button get
-  	$("button.get").click(function() {
+  	$("button.get").click(() => {
         $(".winners").empty();
         if (EmbarkJS.isNewWeb3()) {
             Votrice.methods.getWinners().call().then((value) => {

@@ -95,5 +95,12 @@ function getWinners() public returns (uint[]) {
     return winners;
 }
 
+// function to destroy the contract and get back the funds
+function kill() public {
+    if (msg.sender == creator) {
+        selfdestruct(creator);
+    }
+}
+
 // END
 }

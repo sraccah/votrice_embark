@@ -4,6 +4,30 @@
       "0x492e5d5ce3be8851af20cc715b520650b11e84c97303baf30396c0492ea9e2f6": {
         "name": "Votrice",
         "address": "0x10a4909e6438a8e76041e8ae9163f82a754a1e3c"
+      },
+      "0x09bf538a001f714b197f1f81531ca49528ef7284ed004d2d2653a7b27f061722": {
+        "name": "Votrice",
+        "address": "0x74cadef65ff72a7d3843a8dfdf7ac1ed196d1d5f"
+      },
+      "0xbe7dd0864214d52778b16c2d982d02f4784a9af11cfc83416adc2455571dfa7f": {
+        "name": "Votrice",
+        "address": "0x421da177fb2d3de22d88ce47db03f1c0283fa00a"
+      },
+      "0x7a7b09ab4cf55136b7b784b5e01bce9d8508ab312c52bad1d537f5b1e812a4cf": {
+        "name": "Votrice",
+        "address": "0x03707741561518c1cc7b1c3960b0165efb90bd43"
+      },
+      "0x98c1fac17d2eefe7144463960ac1fee7ac10300e5baea3bbe8a299848de0d3de": {
+        "name": "Votrice",
+        "address": "0x4c4867dfc34863cd8256941f7afe705033ec07d7"
+      },
+      "0x4bd60b7b0e18f91418547a5cd02a21103e5ec4872f33b889b702263d004891bc": {
+        "name": "Votrice",
+        "address": "0x7e92339364e33218d32f156ce74f1a20b9c388dc"
+      },
+      "0x83fb856af1dcb52beba8955238eb4129e42509e45b7d217e7f6a8b675c04c345": {
+        "name": "Votrice",
+        "address": "0xaed2cda91a00b0243ba8fd6f80e981536440726a"
       }
     },
     "name": "development"
